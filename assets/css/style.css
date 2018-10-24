@@ -1,0 +1,198 @@
+body {
+  min-height: 1500px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  padding: 20px;
+  background-image: url('../images/background-images/concrete.png');
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  /* background-image: url('../images/background-images/ep_naturalblack.png'); */
+  color: #292c2f;
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header-logo {
+  width: 140px;
+  height: auto;
+  margin: 30px;
+}
+
+.name {
+  hyphens: auto;
+  margin: 30px;
+}
+
+.light-text {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);	/* 50% opaque white */
+  padding: 10px 15px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+}
+
+.navlink {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.navlink:hover {
+  color: hotpink;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  /* right: 10; */
+  width: calc(100% - 70px);
+}
+
+/* Add some top padding to the page content to 
+  prevent sudden quick movement (as the navigation 
+  bar gets a new position at the top of the page 
+  (position:fixed and top:0) */
+.sticky+.content {
+  margin-top: 80px;
+}
+
+.nav-logo {
+  width: 64px;
+  height: 64px;
+  margin-right: auto;
+}
+
+.hide-nav-logo {
+  display: none;
+}
+
+.show-nav-logo {
+  display: block;
+}
+
+.content {
+  background: white;
+  /* background-image: url('../images/background-images/geometry2.png'); */
+  padding: 16px 32px 0 16px;
+}
+
+.body-text {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.about-me {
+  padding: 100px 100px;
+  text-align: center;
+}
+
+.giant-text {
+  margin: 0 auto;
+  font-size: 48px;
+  hyphens: auto;
+  font-family: 'Cutive Mono', monospace;
+}
+
+.giant-text-container {
+  max-width: 400px;
+  max-height: 300px;
+  margin: 40px;
+}
+
+.text-highlight, a:hover {
+  color: hotpink;
+}
+
+.portfolio-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  min-height: 1200px;
+  padding: 0 2% 0 2%;
+}
+
+.portfolio-image {
+  width: 500px;
+  height: auto;
+}
+
+.portfolio-image-container {
+  background: white;
+  padding: 20px;
+}
+
+.portfolio-item-links {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.07);
+}
+
+footer {
+  margin-top: 20px;
+  height: 200px;
+  background-color: #292c2f;
+  background-image: url('../images/background-images/ep_naturalblack.png');
+  padding: 40px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer a {
+  color: white;
+}
+.footer-icons {
+  font-size: 24px;
+  color: white;
+  width: 175px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer-title {
+  color:  #8f9296;
+	font-size: 14px;
+}
+
+.footer-links {
+  color: white;
+  font-size: 18px;
+}
+
+.footer-icon:hover {
+  color: hotpink;
+}
