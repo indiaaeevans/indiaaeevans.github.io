@@ -138,12 +138,6 @@ a {
   padding: 2% 1% 2% 1%;
 }
 
-.portfolio-section::after {
-  content: '';
-  display: block;
-  margin-left: 1080px;
-}
-
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
   .portfolio-section::after {
@@ -155,9 +149,12 @@ a {
 
 /* Large screens ----------- */
 @media only screen and (min-width : 1824px) {
-  /* Styles */
+  .portfolio-section::after {
+    content: '';
+    display: block;
+    margin-left: 1080px;
+  }
 }
-
 
 .portfolio-image {
   width: 450px;
