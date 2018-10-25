@@ -3,8 +3,12 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  padding: 20px;
+  /* padding: 20px; */
   background-image: url('../images/background-images/concrete.png');
+}
+
+.wrapper {
+  padding: 20px;
 }
 
 a {
@@ -12,10 +16,9 @@ a {
 }
 
 .header {
-  /* background-image: url('../images/background-images/ep_naturalblack.png'); */
   color: #292c2f;
+  padding: 1% 1% 1% 2%;
   min-height: 300px;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -67,7 +70,7 @@ a {
   position: fixed;
   top: 0;
   /* right: 10; */
-  width: calc(100% - 70px);
+  width: calc(100% - 30px);
 }
 
 /* Add some top padding to the page content to 
