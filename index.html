@@ -8,10 +8,8 @@
   <title>India Evans | Web Developer</title>
   <link rel="shortcut icon" href="./assets/images/doodle.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Space+Mono:400,400i" rel="stylesheet">
-  <!-- ICONS  -->
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono:400,400i" rel="stylesheet">
   <script src="https://use.fontawesome.com/276bc7b459.js"></script>
-
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 
@@ -19,9 +17,12 @@
 
 <body>
   <div class="header">
-    <!-- <img class="header-logo" src="./assets/images/icons/eye-with-eyelash.png" alt=""> -->
     <div class="giant-text-container">
-      <h1 class="giant-text">MAKE<br>SOMETHING <span class="text-highlight">COOL</span> EVERY DAY</h1>
+      <h1 class="giant-text">
+        MAKE<br>SOMETHING<br>
+        <span class="text-highlight" id="word">you love</span>
+        <br>EVERY DAY
+      </h1>
     </div>
     <h1 class="light-text name text-highlight">India Evans / Web Developer</h1>
   </div>
@@ -39,13 +40,13 @@
         <div class="portfolio-item-links">Stir & Shake | About | Demo | Github</div>
       </div>
       <div class="portfolio-item-container box-shadow">
-          <img src="assets/images/portfolio-images/material-data-table.png" alt="" class="portfolio-image">
-          <div class="portfolio-item-links">Material DataTable | About | Demo | Github</div>
-        </div>
-        <div class="portfolio-item-container box-shadow">
-            <img src="assets/images/portfolio-images/sk-login.png" alt="" class="portfolio-image">
-            <div class="portfolio-item-links">SafeKeeper | About | Demo | Github</div>
-          </div>
+        <img src="assets/images/portfolio-images/material-data-table.png" alt="" class="portfolio-image">
+        <div class="portfolio-item-links">Material DataTable | About | Demo | Github</div>
+      </div>
+      <div class="portfolio-item-container box-shadow">
+        <img src="assets/images/portfolio-images/sk-login.png" alt="" class="portfolio-image">
+        <div class="portfolio-item-links">SafeKeeper | About | Demo | Github</div>
+      </div>
       <div class="portfolio-item-container box-shadow">
         <img src="assets/images/portfolio-images/teacherpet.png" alt="" class="portfolio-image">
         <div class="portfolio-item-links">
@@ -57,9 +58,9 @@
         <div class="portfolio-item-links">Color Theory | About | Demo | Github</div>
       </div>
       <div class="portfolio-item-container box-shadow">
-          <img src="assets/images/portfolio-images/gif-generator.png" alt="" class="portfolio-image">
-          <div class="portfolio-item-links">Gif Generator | About | Demo | Github</div>
-        </div>
+        <img src="assets/images/portfolio-images/gif-generator.png" alt="" class="portfolio-image">
+        <div class="portfolio-item-links">Gif Generator | About | Demo | Github</div>
+      </div>
       <div class="portfolio-item-container box-shadow">
         <img src="assets/images/portfolio-images/hangman-2.png" alt="" class="portfolio-image">
         <div class="portfolio-item-links">Hangman | About | Demo | Github</div>
@@ -86,7 +87,6 @@
     </footer>
 </body>
 <script>
-  // When the user scrolls the page, execute myFunction 
   window.onscroll = function () {
     myFunction()
   };
@@ -96,7 +96,6 @@
   var projectsLink = document.getElementById("projects");
   var sticky = navbar.offsetTop;
 
-  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
   function myFunction() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky")
@@ -107,5 +106,6 @@
     }
   }
 </script>
+<script src="assets/js/message.js"></script>
 
 </html>

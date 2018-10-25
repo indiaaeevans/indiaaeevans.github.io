@@ -140,6 +140,12 @@ a {
   min-height: 1500px;
 }
 
+.portfolio-section::after {
+  content: '';
+  display: block;
+  margin-left: 540px;
+  }
+
 .portfolio-image {
   width: 500px;
   height: auto;
@@ -153,8 +159,7 @@ a {
 .portfolio-item-links {
   text-align: center;
   margin-top: 20px;
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 300;
   font-size: 14px;
 }
 
