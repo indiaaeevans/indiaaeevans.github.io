@@ -1,5 +1,5 @@
 body {
-  min-height: 1500px;
+  min-height: 100vh;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -40,7 +40,7 @@ a {
 
 #navbar {
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.5);	/* 50% opaque white */
+  background-color: rgba(255, 255, 255, 0.8);	/* 50% opaque white */
   padding: 10px 15px;
   font-weight: bold;
   display: flex;
@@ -59,7 +59,7 @@ a {
 }
 
 .navlink:hover {
-  color: hotpink;
+  color: #ff1d8e;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -72,8 +72,7 @@ a {
 
 /* Add some top padding to the page content to 
   prevent sudden quick movement (as the navigation 
-  bar gets a new position at the top of the page 
-  (position:fixed and top:0) */
+  bar gets a new position at the top of the page */
 .sticky+.content {
   margin-top: 80px;
 }
@@ -95,7 +94,9 @@ a {
 .content {
   background: white;
   /* background-image: url('../images/background-images/geometry2.png'); */
-  padding: 16px 32px 0 16px;
+  /* padding: 16px 32px 0 16px; */
+  background-color: rgba(255, 255, 255, 0.5);	/* 50% opaque white */
+
 }
 
 .body-text {
@@ -104,8 +105,9 @@ a {
 }
 
 .about-me {
-  padding: 100px 100px;
-  text-align: center;
+  padding: 20% 20%;
+  text-align: justify;
+  background-image: url('../images/background-images/concrete.png');
 }
 
 .giant-text {
@@ -115,24 +117,27 @@ a {
   font-family: 'Cutive Mono', monospace;
 }
 
+.mono {
+  font-family: 'Cutive Mono', monospace;
+}
+
 .giant-text-container {
   max-width: 400px;
   max-height: 300px;
   margin: 40px;
 }
 
-.text-highlight, a:hover {
-  color: hotpink;
+.text-highlight {
+  color: #ff1d8e;
 }
 
 .portfolio-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-content: space-around;
-  min-height: 1200px;
-  padding: 0 2% 0 2%;
+  min-height: 1500px;
 }
 
 .portfolio-image {
@@ -140,23 +145,23 @@ a {
   height: auto;
 }
 
-.portfolio-image-container {
+.portfolio-item-container {
   background: white;
   padding: 20px;
 }
 
 .portfolio-item-links {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: 400;
   font-style: normal;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .box-shadow {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.07);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
 }
 
 footer {
@@ -185,7 +190,7 @@ footer a {
 }
 .footer-title {
   color:  #8f9296;
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .footer-links {
@@ -193,6 +198,6 @@ footer a {
   font-size: 18px;
 }
 
-.footer-icon:hover {
-  color: hotpink;
+.footer-icon:hover, .footer-links a:hover {
+  color: #ff1d8e;
 }

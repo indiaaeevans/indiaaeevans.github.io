@@ -27,54 +27,63 @@
   </div>
   <div id="navbar">
     <img class="nav-logo" src="./assets/images/doodle-icon.png" alt="Swirly Logo">
-    <a class="navlink" href="#home">HOME</a>
-    <a class="navlink" href="#about">ABOUT</a>
-    <a class="navlink" href="#projects">PROJECTS</a>
-    <a class="navlink" href="#">CONTACT</a>
-
+    <a id="home" class="navlink text-highlight" href="index.html">HOME</a>
+    <a class="navlink" href="about.html#navbar">ABOUT</a>
+    <a id="projects" class="navlink" href="index.html#navbar">PROJECTS</a>
+    <a class="navlink" href="mailto:indiaaeevans@gmail.com">CONTACT</a>
   </div>
-  <div class="content body-text">
+  <div class="content body-text" id="portfolio">
     <div class="portfolio-section">
-      <div class="portfolio-image-container box-shadow">
+      <div class="portfolio-item-container box-shadow">
         <img src="assets/images/portfolio-images/ss-recipe.png" alt="" class="portfolio-image">
-        <h5>Stir & Shake | About | Demo | Github</h5>
+        <div class="portfolio-item-links">Stir & Shake | About | Demo | Github</div>
       </div>
-      <div class="portfolio-image-container box-shadow">
+      <div class="portfolio-item-container box-shadow">
+          <img src="assets/images/portfolio-images/material-data-table.png" alt="" class="portfolio-image">
+          <div class="portfolio-item-links">Material DataTable | About | Demo | Github</div>
+        </div>
+        <div class="portfolio-item-container box-shadow">
+            <img src="assets/images/portfolio-images/sk-login.png" alt="" class="portfolio-image">
+            <div class="portfolio-item-links">SafeKeeper | About | Demo | Github</div>
+          </div>
+      <div class="portfolio-item-container box-shadow">
         <img src="assets/images/portfolio-images/teacherpet.png" alt="" class="portfolio-image">
         <div class="portfolio-item-links">
-          <a>Teacher's Pet</a> | <a>About</a> | <a>Demo</a> | <a>Github</a>
+          Teacher's Pet | <a>About</a> | <a>Demo</a> | <a>Github</a>
         </div>
       </div>
-      <div class="portfolio-image-container box-shadow">
+      <div class="portfolio-item-container box-shadow">
         <img src="assets/images/portfolio-images/color.png" alt="" class="portfolio-image">
-        <h5>Color Theory | About | Demo | Github</h5>
+        <div class="portfolio-item-links">Color Theory | About | Demo | Github</div>
       </div>
-      <div class="portfolio-image-container box-shadow">
-        <img src="assets/images/portfolio-images/sk-login.png" alt="" class="portfolio-image">
-        <h5>SafeKeeper | About | Demo | Github</h5>
+      <div class="portfolio-item-container box-shadow">
+          <img src="assets/images/portfolio-images/gif-generator.png" alt="" class="portfolio-image">
+          <div class="portfolio-item-links">Gif Generator | About | Demo | Github</div>
+        </div>
+      <div class="portfolio-item-container box-shadow">
+        <img src="assets/images/portfolio-images/hangman-2.png" alt="" class="portfolio-image">
+        <div class="portfolio-item-links">Hangman | About | Demo | Github</div>
       </div>
     </div>
-  </div>
-  <footer>
-    <div class="footer-text">
-      <p class="footer-links">
-        <a href="#home">Home</a>
-        ·
-        <a href="#about">About</a>
-        ·
-        <a href="#portfolio">Portfolio</a>
-        ·
-        <a href="#contact">Contact</a>
-      </p>
-      <p class="footer-title">India Evans, Web Developer</p>
-    </div>
-    <div class="footer-icons">
-      <a href="mailto:indiaaeevans@gmail.com"><i class="fa fa-envelope footer-icon"></i></a>
-      <a href="https://stackoverflow.com/users/7412672/india-evans?tab=profile"><i class="fa fa-stack-overflow footer-icon"></i></a>
-      <a href="https://www.linkedin.com/in/indiaevans/"><i class="fa fa-linkedin footer-icon"></i></a>
-      <a href="https://github.com/indiaaeevans"><i class="fa fa-github footer-icon"></i></a>
-    </div>
-  </footer>
+    <footer>
+      <div class="footer-text">
+        <p class="footer-links">
+          <a href="index.html">Home</a>
+          ·
+          <a href="about.html#navbar">About</a>
+          ·
+          <a href="index.html#portfolio">Portfolio</a>
+          ·
+          <a href="mailto:indiaaeevans@gmail.com">Contact</a>
+        </p>
+        <p class="footer-title mono">India Evans, Web Developer</p>
+      </div>
+      <div class="footer-icons">
+        <a href="mailto:indiaaeevans@gmail.com"><i class="fa fa-envelope footer-icon"></i></a>
+        <a href="https://www.linkedin.com/in/indiaevans/"><i class="fa fa-linkedin footer-icon"></i></a>
+        <a href="https://github.com/indiaaeevans"><i class="fa fa-github footer-icon"></i></a>
+      </div>
+    </footer>
 </body>
 <script>
   // When the user scrolls the page, execute myFunction 
@@ -82,20 +91,17 @@
     myFunction()
   };
 
-  // Get the navbar
   var navbar = document.getElementById("navbar");
-
-  // Get the offset position of the navbar
+  var homeLink = document.getElementById("home");
+  var projectsLink = document.getElementById("projects");
   var sticky = navbar.offsetTop;
-
-  // get the nav logo
-  var navLogo = document.getElementsByClassName('nav-logo')[0];
-  console.log(navLogo);
 
   // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
   function myFunction() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky")
+      homeLink.classList.remove("text-highlight");
+      projectsLink.classList.add("text-highlight");
     } else {
       navbar.classList.remove("sticky");
     }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>India Evans | Web Developer</title>
+  <link rel="shortcut icon" href="./assets/images/doodle.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Space+Mono:400,400i" rel="stylesheet">
+  <!-- ICONS  -->
+  <script src="https://use.fontawesome.com/276bc7b459.js"></script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+</head>
+
+<body>
+  <div class="header">
+    <!-- <img class="header-logo" src="./assets/images/icons/eye-with-eyelash.png" alt=""> -->
+    <div class="giant-text-container">
+      <h1 class="giant-text">MAKE<br>SOMETHING <span class="text-highlight">COOL</span> EVERY DAY</h1>
+    </div>
+    <h1 class="light-text name text-highlight">India Evans / Web Developer</h1>
+  </div>
+  <div id="navbar">
+    <img class="nav-logo" src="./assets/images/doodle-icon.png" alt="Swirly Logo">
+    <a class="navlink" href="index.html">HOME</a>
+    <a class="navlink text-highlight" href="about.html#navbar">ABOUT</a>
+    <a class="navlink" href="index.html#navbar">PROJECTS</a>
+    <a class="navlink" href="contact.html">CONTACT</a>
+  </div>
+  <div class="content body-text">
+      <div class="about-me mono">
+            I am a full-stack web developer with a passion for front-end development and
+            design.
+            I believe in building apps that are usable, intuitive, and effective.
+            Most of my experience has been in JavaScript, Node.js, Angular (2+), jQuery, and MongoDB.
+            When I'm not busy building software, I'm usually doing artsy craftsy things!
+      </div>
+    </div>
+    <footer>
+            <div class="footer-text">
+              <p class="footer-links">
+                <a href="index.html">Home</a>
+                ·
+                <a href="about.html">About</a>
+                ·
+                <a href="index.html#portfolio">Portfolio</a>
+                ·
+                <a href="mailto:indiaaeevans@gmail.com">Contact</a>
+              </p>
+              <p class="footer-title mono">India Evans, Web Developer</p>
+            </div>
+            <div class="footer-icons">
+              <a href="mailto:indiaaeevans@gmail.com"><i class="fa fa-envelope footer-icon"></i></a>
+              <a href="https://www.linkedin.com/in/indiaevans/"><i class="fa fa-linkedin footer-icon"></i></a>
+              <a href="https://github.com/indiaaeevans"><i class="fa fa-github footer-icon"></i></a>
+            </div>
+          </footer>
+</body>
+<script>
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function () {
+    myFunction()
+  };
+
+  // Get the navbar
+  var navbar = document.getElementById("navbar");
+
+  // Get the offset position of the navbar
+  var sticky = navbar.offsetTop;
+
+  // get the nav logo
+  var navLogo = document.getElementsByClassName('nav-logo')[0];
+  console.log(navLogo);
+
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script>
+
+</html>
