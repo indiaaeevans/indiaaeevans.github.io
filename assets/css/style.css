@@ -145,7 +145,7 @@ a {
 }
 
 /* Large screens ----------- */
-@media only screen and (min-width : 1824px) {
+@media only screen and (min-width : 1024px) {
   .portfolio-section::after {
     content: '';
     display: block;
