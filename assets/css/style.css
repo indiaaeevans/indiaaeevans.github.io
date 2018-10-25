@@ -138,13 +138,10 @@ a {
   padding: 2% 1% 2% 1%;
 }
 
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
-  .portfolio-section::after {
-    content: '';
-    display: block;
-    margin-left: 540px;
-  }
+.portfolio-section::after {
+  content: '';
+  display: block;
+  margin-left: 540px;
 }
 
 /* Large screens ----------- */
