@@ -3,7 +3,6 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  /* padding: 20px; */
   background-image: url('../images/background-images/concrete.png');
 }
 
@@ -43,7 +42,7 @@ a {
 
 #navbar {
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.8);	/* 50% opaque white */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 15px;
   font-weight: bold;
   display: flex;
@@ -95,11 +94,7 @@ a {
 }
 
 .content {
-  background: white;
-  /* background-image: url('../images/background-images/geometry2.png'); */
-  /* padding: 16px 32px 0 16px; */
-  background-color: rgba(255, 255, 255, 0.5);	/* 50% opaque white */
-
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .body-text {
@@ -110,7 +105,7 @@ a {
 .about-me {
   padding: 20% 20%;
   text-align: justify;
-  background-image: url('../images/background-images/concrete.png');
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .giant-text {
@@ -182,7 +177,6 @@ a {
 }
 
 footer {
-  margin-top: 20px;
   height: 200px;
   background-color: #292c2f;
   background-image: url('../images/background-images/ep_naturalblack.png');
