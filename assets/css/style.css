@@ -157,6 +157,9 @@ a {
 .portfolio-item-container {
   background: white;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .portfolio-item-links {
@@ -164,6 +167,12 @@ a {
   margin-top: 20px;
   font-weight: 300;
   font-size: 14px;
+}
+.portfolio-item-links a {
+  color: black;
+}
+.portfolio-item-links a:hover {
+  color: #ff1d8e;
 }
 
 .box-shadow {
