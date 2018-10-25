@@ -30,7 +30,7 @@
     <img class="nav-logo" src="./assets/images/doodle-icon.png" alt="Swirly Logo">
     <a id="home" class="navlink text-highlight" href="index.html">HOME</a>
     <a class="navlink" href="about.html#navbar">ABOUT</a>
-    <a id="projects" class="navlink" href="index.html#navbar">PROJECTS</a>
+    <a id="portfolio" class="navlink" href="index.html#navbar">PORTFOLIO</a>
     <a class="navlink" href="mailto:indiaaeevans@gmail.com">CONTACT</a>
   </div>
   <div class="content body-text" id="portfolio">
@@ -99,7 +99,6 @@
         </div>
       </div>
     </div>
-    <br><br>
     <footer>
       <div class="mono">
         <p class="footer-links">
@@ -127,14 +126,14 @@
 
   var navbar = document.getElementById("navbar");
   var homeLink = document.getElementById("home");
-  var projectsLink = document.getElementById("projects");
+  var portfolioLink = document.getElementById("portfolio");
   var sticky = navbar.offsetTop;
 
   function myFunction() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky")
       homeLink.classList.remove("text-highlight");
-      projectsLink.classList.add("text-highlight");
+      portfolioLink.classList.add("text-highlight");
     } else {
       navbar.classList.remove("sticky");
     }
