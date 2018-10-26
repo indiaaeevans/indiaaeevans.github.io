@@ -6,12 +6,36 @@ body {
   background-image: url('../images/background-images/concrete.png');
 }
 
-.wrapper {
-  padding: 20px;
-}
-
 a {
   text-decoration: none;
+}
+
+a:hover {
+  color: #ff1d8e;
+}
+
+.text-muted {
+  color: #8f9296;
+  font-size: 14px;
+}
+
+.text-highlight {
+  color: #ff1d8e;
+}
+
+.text-light {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.mono {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
 }
 
 .header {
@@ -35,11 +59,6 @@ a {
   margin: 30px;
 }
 
-.light-text {
-  font-size: 18px;
-  font-weight: 300;
-}
-
 #navbar {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.8);
@@ -60,37 +79,22 @@ a {
   font-size: 18px;
 }
 
-.navlink:hover {
-  color: #ff1d8e;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  /* right: 10; */
-  width: calc(100% - 60px);
-}
-
-/* Add some top padding to the page content to 
-  prevent sudden quick movement (as the navigation 
-  bar gets a new position at the top of the page */
-.sticky+.content {
-  margin-top: 80px;
-}
-
 .nav-logo {
   width: 64px;
   height: 64px;
   margin-right: auto;
 }
 
-.hide-nav-logo {
-  display: none;
+.sticky {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 60px);
 }
-
-.show-nav-logo {
-  display: block;
+/* Add some top padding to the page content to 
+  prevent sudden quick movement (as the navigation 
+  bar gets a new position at the top of the page */
+.sticky+.content {
+  margin-top: 80px;
 }
 
 .content {
@@ -134,18 +138,10 @@ a {
   hyphens: auto;
 }
 
-.mono {
-  font-family: 'Cutive Mono', monospace;
-}
-
 .giant-text-container {
   max-width: 400px;
   max-height: 300px;
   margin: 40px;
-}
-
-.text-highlight {
-  color: #ff1d8e;
 }
 
 .portfolio-section {
@@ -200,16 +196,6 @@ a {
   color: black;
 }
 
-.portfolio-item-links a:hover {
-  color: #ff1d8e;
-}
-
-.box-shadow {
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
-}
-
 footer {
   height: 200px;
   background-color: #292c2f;
@@ -234,20 +220,7 @@ footer a {
   justify-content: space-between;
 }
 
-.footer-title {
-  font-size: 14px;
-}
-
 .footer-links {
   color: white;
   font-size: 18px;
-}
-
-.footer-icon:hover,
-.footer-links a:hover {
-  color: #ff1d8e;
-}
-
-.text-muted {
-  color: #8f9296;
 }
