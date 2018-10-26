@@ -102,10 +102,13 @@ a {
   font-size: 18px;
 }
 
-.about-me {
-  padding: 20% 20%;
-  text-align: justify;
+.about-me-section {
+  padding: 12% 20% 20% 20%;
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.about-me-p {
+  text-align: justify;
 }
 
 .giant-text {
