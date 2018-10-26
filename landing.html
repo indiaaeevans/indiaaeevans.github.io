@@ -7,53 +7,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>India Evans | Web Developer</title>
     <link rel="shortcut icon" href="./assets/images/doodle.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Space+Mono:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Cutive+Mono:400" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 
 <body>
-    <div class="header">
-        <div class="giant-text-container">
-            <h1 class="giant-text">
+    <div class="landing-section">
+
+        <img class="landing-logo" src="./assets/images/doodle-icon.png" alt="Swirly Logo">
+
+        <div class="message-container">
+            <h1 class="giant-text mono">
                 MAKE<br>SOMETHING<br>
                 <span class="text-highlight" id="word">you love</span>
                 <br>EVERY DAY
             </h1>
         </div>
-        <h1 class="light-text name text-highlight">India Evans / Web Developer</h1>
     </div>
     <div id="navbar">
-        <img class="nav-logo" src="./assets/images/doodle-icon.png" alt="Swirly Logo">
-        <a class="navlink" href="landing.html">HOME</a>
-        <a class="navlink text-highlight" href="about.html#navbar">ABOUT</a>
-        <a class="navlink" href="portfolio.html#navbar">PORTFOLIO</a>
-        <a class="navlink" href="contact.html">CONTACT</a>
+        <!-- <img class="nav-logo" src="./assets/images/doodle-icon.png" alt="Swirly Logo"> -->
+        <h4 class="nav-name light-text text-highlight">India Evans / Web Developer</h4>
+        <a id="home" class="navlink text-highlight" href="landing.html">HOME</a>
+        <a class="navlink" href="about.html#navbar">ABOUT</a>
+        <a id="portfolio" class="navlink" href="portfolio.html#navbar">PORTFOLIO</a>
+        <a class="navlink" href="mailto:indiaaeevans@gmail.com">CONTACT</a>
     </div>
     <div class="content body-text">
-        <div class="about-me-section mono">
-            <div class="about-me-image">
-                <img src="./assets/images/hand.JPG" alt="" class="round-image" srcset="">
-            </div>
-            <div class="about-me-text">
-                <h1 class="text-highlight">Hello, I'm India Evans.</h1>
-                <p class="about-me-p">
-                    I am a full-stack web developer with a passion for front-end development and design.
-                    I believe in building apps that are usable, intuitive, and effective.
-                    Most of my experience has been in JavaScript, Node.js, Angular (2+), jQuery, and MongoDB.
-                    When I'm not busy building software, I'm usually doing artsy craftsy things!
-                </p>
-            </div>
-        </div>
+
+
     </div>
     <footer>
         <div class="mono">
             <p class="footer-links">
                 <a href="landing.html">Home</a>
                 ·
-                <a href="about.html">About</a>
+                <a href="about.html#navbar">About</a>
                 ·
                 <a href="portfolio.html#portfolio">Portfolio</a>
                 ·
@@ -73,19 +64,22 @@
     window.onscroll = function () {
         myFunction()
     };
+
     var navbar = document.getElementById("navbar");
+    var homeLink = document.getElementById("home");
+    var portfolioLink = document.getElementById("portfolio");
     var sticky = navbar.offsetTop;
-    var navLogo = document.getElementsByClassName('nav-logo')[0];
 
     function myFunction() {
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky")
+            homeLink.classList.remove("text-highlight");
+            portfolioLink.classList.add("text-highlight");
         } else {
             navbar.classList.remove("sticky");
         }
     }
 </script>
 <script src="assets/js/message.js"></script>
-
 
 </html>
