@@ -170,7 +170,7 @@ a {
   .portfolio-section::after {
     content: '';
     display: block;
-    margin-left: 1080px;
+    margin-left: 1020px;
   }
 }
 
