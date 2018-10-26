@@ -161,7 +161,7 @@ a {
   .portfolio-section::after {
     content: '';
     display: block;
-    margin-left: 540px;
+    margin-left: 490px;
   }
 }
 
