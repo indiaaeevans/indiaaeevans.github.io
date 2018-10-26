@@ -117,7 +117,7 @@
 </body>
 <script>
   window.onscroll = function () {
-    myFunction()
+    toggleStickyNav()
   };
 
   var navbar = document.getElementById("navbar");
@@ -125,7 +125,7 @@
   var portfolioLink = document.getElementById("portfolio");
   var sticky = navbar.offsetTop;
 
-  function myFunction() {
+  function toggleStickyNav() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky")
     } else {

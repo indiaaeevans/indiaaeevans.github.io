@@ -71,13 +71,13 @@
 </body>
 <script>
     window.onscroll = function () {
-        myFunction()
+        toggleStickyNav()
     };
     var navbar = document.getElementById("navbar");
     var sticky = navbar.offsetTop;
     var navLogo = document.getElementsByClassName('nav-logo')[0];
 
-    function myFunction() {
+    function toggleStickyNav() {
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky")
         } else {
