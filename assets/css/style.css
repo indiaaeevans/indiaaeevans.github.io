@@ -1,9 +1,9 @@
 body {
   min-height: 100vh;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  background-image: url('../images/background-images/concrete.png');
+  background-image: url("../images/background-images/concrete.png");
 }
 
 a {
@@ -25,12 +25,11 @@ a:hover {
 }
 
 .text-light {
-  font-size: 18px;
   font-weight: 300;
 }
 
 .mono {
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
 }
 
 .box-shadow {
@@ -40,12 +39,13 @@ a:hover {
 }
 
 .header {
+  background-color: rgba(255, 255, 255, 0.2);
   color: #292c2f;
   padding: 1% 1% 1% 2%;
-  min-height: 300px;
+  min-height: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
 }
 
@@ -58,11 +58,12 @@ a:hover {
 .name {
   hyphens: auto;
   margin: 30px;
+  font-size: 18px;
 }
 
 #navbar {
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 10px 30px;
   font-weight: bold;
   display: flex;
@@ -93,13 +94,13 @@ a:hover {
 /* Add some top padding to the page content to 
   prevent sudden quick movement (as the navigation 
   bar gets a new position at the top of the page */
-.sticky+.content {
+.sticky + .content {
   margin-top: 80px;
 }
 
 .content {
-  min-height: 90vh;
-  background-color: rgba(255, 255, 255, 0.5);
+  /* min-height: 90vh; */
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .body-text {
@@ -109,7 +110,6 @@ a:hover {
 
 .about-me-section {
   padding: 12% 10% 16% 10%;
-  background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -132,47 +132,17 @@ a:hover {
   margin: 5px;
 }
 
-.giant-text {
-  margin: 0 auto;
-  font-size: 48px;
-  hyphens: auto;
-}
-
-.giant-text-container {
-  max-width: 400px;
-  max-height: 300px;
-  margin: 40px;
-}
-
 .portfolio-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: space-around;
-  padding: 2% 1% 2% 1%;
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-  .portfolio-section::after {
-    content: '';
-    display: block;
-    margin-left: 490px;
-  }
-}
-
-/* Large screens ----------- */
-@media only screen and (min-width : 1600px) {
-  .portfolio-section::after {
-    content: '';
-    display: block;
-    margin-left: 1020px;
-  }
+  padding: 30px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, 500px);
+  align-items: stretch;
+  justify-content: center;
 }
 
 .portfolio-image {
-  width: 450px;
+  max-width: 450px;
   height: auto;
 }
 
@@ -181,8 +151,8 @@ a:hover {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .portfolio-item-links {
@@ -199,7 +169,7 @@ a:hover {
 footer {
   height: 200px;
   background-color: #292c2f;
-  background-image: url('../images/background-images/ep_naturalblack.png');
+  background-image: url("../images/background-images/ep_naturalblack.png");
   padding: 40px 0;
   display: flex;
   flex-direction: row;
