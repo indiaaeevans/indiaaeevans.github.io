@@ -59,6 +59,7 @@ a:hover {
   hyphens: auto;
   margin: 30px;
   font-size: 18px;
+  opacity: .5;
 }
 
 #navbar {
