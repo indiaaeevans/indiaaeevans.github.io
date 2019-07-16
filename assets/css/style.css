@@ -1,9 +1,13 @@
 body {
   min-height: 100vh;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  background-image: url("../images/background-images/concrete.png");
+  background-image: url('../images/background-images/concrete.png');
+}
+
+ul {
+  margin: 0;
 }
 
 a {
@@ -29,7 +33,7 @@ a:hover {
 }
 
 .mono {
-  font-family: "Cutive Mono", monospace;
+  font-family: 'Cutive Mono', monospace;
 }
 
 .box-shadow {
@@ -38,31 +42,24 @@ a:hover {
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
 }
 
-.header {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #292c2f;
+.bottom-shadow {
+  box-shadow: 0 8px 8px -8px rgba(0, 0, 0, 0.07);
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 1% 1% 1% 2%;
   min-height: 100px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
-
-.header-logo {
-  width: 140px;
-  height: auto;
-  margin: 30px;
-}
-
-.name {
-  hyphens: auto;
-  margin: 30px;
+header > h1 {
   font-size: 18px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
-#navbar {
+nav {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 10px 30px;
@@ -74,14 +71,14 @@ a:hover {
   height: 60px;
 }
 
-.navlink {
+nav > a {
   display: block;
   text-align: center;
   padding: 14px;
   font-size: 18px;
 }
 
-.nav-logo {
+nav > img {
   width: 64px;
   height: 64px;
   margin-right: auto;
@@ -95,42 +92,39 @@ a:hover {
 /* Add some top padding to the page content to 
   prevent sudden quick movement (as the navigation 
   bar gets a new position at the top of the page */
-.sticky + .content {
+.sticky + main {
   margin-top: 80px;
 }
 
-.content {
-  /* min-height: 90vh; */
+main {
   background-color: rgba(255, 255, 255, 0.3);
-}
-
-.body-text {
   font-weight: normal;
   font-size: 18px;
 }
 
-.about-me-section {
+.about-me {
   padding: 12% 10% 16% 10%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
-.about-me-text {
-  width: 50%;
+.about-me-img {
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
 }
 
-.about-me-p {
-  text-align: justify;
+.about-me-text {
+  width: 45%;
 }
 
 .round-image {
   width: 200px;
   height: auto;
   border-radius: 50%;
-  margin: 5px;
 }
 
 .portfolio-section {
@@ -167,7 +161,7 @@ a:hover {
 footer {
   height: 200px;
   background-color: #292c2f;
-  background-image: url("../images/background-images/ep_naturalblack.png");
+  background-image: url('../images/background-images/ep_naturalblack.png');
   padding: 40px 0;
   display: flex;
   flex-direction: row;
@@ -180,7 +174,7 @@ footer a {
   color: white;
 }
 
-.footer-icons {
+.external-links {
   font-size: 24px;
   width: 175px;
   display: flex;
@@ -188,7 +182,9 @@ footer a {
   justify-content: space-between;
 }
 
-.footer-links {
+.internal-links {
   color: white;
+}
+.internal-links > a {
   font-size: 18px;
 }
