@@ -25,7 +25,13 @@
 
   <body>
     <header>
-      <h1 class="text-highlight">India Evans / Web Developer</h1>
+      <h1 class="text-highlight">
+        India Evans / Web Developer / Personal Projects
+      </h1>
+      <p class="mono">
+        Below are some recent side projects I've created for my own exploration
+        of front end development.
+      </p>
     </header>
     <nav id="menu">
       <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
@@ -33,52 +39,52 @@
       <a href="about.html">ABOUT</a>
       <a class="text-highlight" href="portfolio.html">PORTFOLIO</a>
     </nav>
-    <main>
+    <main id="main">
       <ul class="portfolio-section">
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/recipe-finder-2.png"
             alt="Recipe Finder"
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Recipe Finder |
 
             <a href="https://warm-earth-60999.herokuapp.com/">Demo</a> |
             <a href="https://github.com/indiaaeevans/recipe-finder">Github</a>
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/ransom-note.png"
             alt="Weather Finder"
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Ransom Note Generator |
             <a href="https://github.com/indiaaeevans/ransom-note-generator"
               >Github</a
             >
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/weather-app.png"
             alt="Weather Finder"
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Weather Finder |
             <a href="https://github.com/indiaaeevans/weather-webapp">Github</a>
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/material-data-table.png"
             alt="Material Design Table"
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Material DataTable |
             <a
               href="https://github.com/indiaaeevans/products-material-datatable"
@@ -86,65 +92,65 @@
             >
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/sk-login.png"
             alt=""
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             SafeKeeper |
 
             <a href="https://safe-stream-99507.herokuapp.com/">Demo</a> |
             <a href="https://github.com/indiaaeevans/Virtual-Locker">Github</a>
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/teacherpet.png"
             alt="Teacher's Pet"
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Teacher's Pet |
 
             <a href="https://official-teacherspet.herokuapp.com">Demo</a> |
             <a href="https://github.com/indiaaeevans/TeachersPet">Github</a>
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/color.png"
             alt=""
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Color Theory |
 
             <a href="https://indiaaeevans.github.io/TriviaGame/">Demo</a> |
             <a href="https://github.com/indiaaeevans/TriviaGame">Github</a>
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/gif-generator.png"
             alt="Gif Generator"
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Gif Generator |
 
             <a href="https://indiaaeevans.github.io/gif-generator/">Demo</a> |
             <a href="https://github.com/indiaaeevans/gif-generator">Github</a>
           </div>
         </li>
-        <li class="portfolio-item-container box-shadow">
+        <li>
           <img
             src="assets/images/portfolio-images/hangman-2.png"
             alt="Hangman"
             class="portfolio-image"
           />
-          <div class="portfolio-item-links">
+          <div class="portfolio-links">
             Hangman |
 
             <a href="https://indiaaeevans.github.io/Hangman-Game/">Demo</a> |
@@ -159,24 +165,33 @@
         ·
         <a href="about.html">About</a>
         ·
-        <a href="portfolio.html">Portfolio</a>
+        <a href="#" onclick="scrollToTop()">Portfolio</a>
         <p class="text-muted">India Evans, Web Developer</p>
       </section>
       <section class="external-links">
-        <a href="mailto:indiaaeevans@gmail.com"
+        <a title="Send India an email" href="mailto:indiaaeevans@gmail.com"
           ><i class="far fa-envelope"></i
         ></a>
-        <a href="https://www.linkedin.com/in/indiaevans/"
+        <a
+          title="India's LinkedIn profile"
+          href="https://www.linkedin.com/in/indiaevans/"
           ><i class="fab fa-linkedin-in"></i
         ></a>
-        <a href="https://github.com/indiaaeevans"
+        <a title="India's Github profile" href="https://github.com/indiaaeevans"
           ><i class="fas fa-code-branch"></i
         ></a>
-        <a href="https://medium.com/@indiaaeevans"
+        <a
+          title="India's posts on Medium"
+          href="https://medium.com/@indiaaeevans"
           ><i class="fab fa-medium-m"></i
         ></a>
       </section>
     </footer>
   </body>
   <script src="assets/js/sticky.js"></script>
+  <script>
+    function scrollToTop() {
+      window.scrollTo(0, 0);
+    }
+  </script>
 </html>

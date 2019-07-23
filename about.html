@@ -25,19 +25,57 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <style>
+      .button2 {
+        background-color: rgba(255, 255, 255, 0.3);
+
+        display: inline-block;
+        padding: 0.5em 3em;
+        border: 0.16em solid black;
+        margin: 0 0.3em 0.3em 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        /* text-transform: uppercase; */
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif;
+        /* font-weight: 400; */
+        color: black;
+        text-align: center;
+        transition: all 0.15s;
+      }
+      .button2:hover,
+      .button2:active {
+        color: #ff1d8e;
+        border-color: #ff1d8e;
+      }
+
+      @media all and (max-width: 30em) {
+         .button2 {
+          display: block;
+          margin: 0.4em auto;
+        }
+      }
+      @media all and (max-width: 950px) {
+        .about-me-text {
+          width: 85%;
+          min-height: 240px;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <header>
+    <!-- <header>
       <h1 class="name text-highlight">India Evans / Web Developer</h1>
-    </header>
+    </header> -->
     <nav id="menu">
       <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
       <a href="index.html">HOME</a>
       <a class="text-highlight" href="about.html">ABOUT</a>
       <a href="portfolio.html">PORTFOLIO</a>
     </nav>
-    <main class="about-me mono">
+    <main class="about-me mono" id="main">
       <section class="about-me-img">
         <img
           src="./assets/images/hand.JPG"
@@ -46,21 +84,58 @@
         />
       </section>
       <section class="about-me-text">
-        <h1 class="text-highlight">Hello, I'm India Evans.</h1>
-        <p>
-          I am a full-stack web developer with a passion for front-end
-          development and design. I believe in building apps that are engaging,
-          intuitive, and effective. Most of my experience has been in HTML, CSS,
-          JavaScript, Node.js, and Angular. When I'm not busy building software,
-          I'm usually doing artsy craftsy things!
-        </p>
+        <article class="p1">
+          <h1 class="text-highlight">Hello, I'm India Evans.</h1>
+          <p>
+            I am a full-stack web developer with a passion for front-end
+            development and design. Most of my experience has been in HTML, CSS,
+            JavaScript, Node.js, and Angular. When I'm not busy building
+            software, I'm usually doing artsy craftsy things!
+          </p>
+          <button class="button2" onclick="showPage2()">
+            >>
+          </button>
+        </article>
+        <article class="p2">
+          <p>
+            After graduating from UNC Chapel Hill with a degree in Economics, I
+            entered the financial services industry. I quickly excelled, but I
+            also quickly recognized that overall it was not the right fit for
+            me.
+          </p>
+          <p>
+            So, I took the risk of dumping my savings into a 6-month "coding
+            bootcamp" to learn what I needed to start building a career in tech
+            (while continuing working full-time).
+          </p>
+          <button class="button2" onclick="showPage1()">
+            <<
+          </button>
+          <button class="button2" onclick="showPage3()">
+            >>
+          </button>
+        </article>
+        <article class="p3">
+          <p>
+            By the end of the bootcamp, my greatest assets--my ability to solve
+            problems and my curiosity to learn--allowed me to transition into my
+            current role as a software engineer. More importantly, I found a
+            home in software development.
+          </p>
+          <button class="button2" onclick="showPage2()">
+            <<
+          </button>
+          <a href="portfolio.html" class="bouncy button2"
+            >Show me your code >></a
+          >
+        </article>
       </section>
     </main>
     <footer>
       <section class="internal-links mono">
         <a href="index.html">Home</a>
         ·
-        <a href="about.html">About</a>
+        <a href="#" onclick="scrollToTop()">About</a>
         ·
         <a href="portfolio.html">Portfolio</a>
         <p class="text-muted">India Evans, Web Developer</p>
@@ -82,4 +157,36 @@
     </footer>
   </body>
   <script src="assets/js/sticky.js"></script>
+  <script>
+    const aboutMe1 = document.getElementsByClassName('p1')[0];
+    const aboutMe2 = document.getElementsByClassName('p2')[0];
+    const aboutMe3 = document.getElementsByClassName('p3')[0];
+    function showPage1() {
+      aboutMe2.style.transitionDelay = '0s';
+      aboutMe1.style.transitionDelay = '2s';
+      aboutMe2.style.opacity = '0';
+      aboutMe1.style.opacity = '1';
+      aboutMe1.style.zIndex = '1';
+    }
+    function showPage2() {
+      aboutMe3.style.transitionDelay = '0s';
+      aboutMe2.style.transitionDelay = '2s';
+      aboutMe1.style.transitionDelay = '0s';
+      aboutMe2.style.opacity = '1';
+      aboutMe3.style.opacity = '0';
+      aboutMe1.style.opacity = '0';
+      aboutMe1.style.zIndex = '0';
+    }
+    function showPage3() {
+      aboutMe3.style.transitionDelay = '2s';
+
+      aboutMe2.style.transitionDelay = '0s';
+      aboutMe2.style.opacity = '0';
+      aboutMe3.style.opacity = '1';
+    }
+
+    function scrollToTop() {
+      window.scrollTo(0, 0);
+    }
+  </script>
 </html>
