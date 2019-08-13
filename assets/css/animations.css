@@ -1,4 +1,4 @@
-.fade-in {
+.animate-fade-in {
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
@@ -40,7 +40,7 @@
   }
 }
 
-.fade-out {
+.animate-fade-out {
   animation: fadeout 3s;
   -moz-animation: fadeout 3s; /* Firefox */
   -webkit-animation: fadeout 3s; /* Safari and Chrome */

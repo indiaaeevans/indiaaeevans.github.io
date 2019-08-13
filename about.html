@@ -10,6 +10,8 @@
       href="./assets/images/doodle.png"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700"
       rel="stylesheet"
@@ -26,109 +28,54 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
-    <style>
-      .button2 {
-        background-color: rgba(255, 255, 255, 0.3);
-
-        display: inline-block;
-        padding: 0.5em 3em;
-        border: 0.16em solid black;
-        margin: 0 0.3em 0.3em 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        /* text-transform: uppercase; */
-        font-size: 12px;
-        font-family: 'Montserrat', sans-serif;
-        /* font-weight: 400; */
-        color: black;
-        text-align: center;
-        transition: all 0.15s;
-      }
-      .button2:hover,
-      .button2:active {
-        color: #ff1d8e;
-        border-color: #ff1d8e;
-      }
-
-      @media all and (max-width: 30em) {
-         .button2 {
-          display: block;
-          margin: 0.4em auto;
-        }
-      }
-      @media all and (max-width: 950px) {
-        .about-me-text {
-          width: 85%;
-          min-height: 240px;
-        }
-      }
-    </style>
   </head>
 
   <body>
-    <!-- <header>
-      <h1 class="name text-highlight">India Evans / Web Developer</h1>
-    </header> -->
-    <nav id="menu">
-      <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
+    <nav id="menu" class="sticky">
+      <button class="nav-logo-wrapper" title="Show/Hide Menu">
+        <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
+        <img
+          class="nav-logo-top-layer"
+          src="./assets/images/doodle-pink.png"
+          alt="Swirly Logo"
+        />
+      </button>
       <a href="index.html">HOME</a>
       <a class="text-highlight" href="about.html">ABOUT</a>
       <a href="portfolio.html">PORTFOLIO</a>
     </nav>
-    <main class="about-me mono" id="main">
-      <section class="about-me-img">
-        <img
-          src="./assets/images/hand.JPG"
-          alt="Avatar Image"
-          class="round-image"
-        />
-      </section>
-      <section class="about-me-text">
-        <article class="p1">
+    <main id="main" class="about">
+      <section class="about-me mono">
+        <div class="about-me-img">
+          <img
+            src="./assets/images/hand.JPG"
+            alt="Avatar Image"
+            class="round-image"
+          />
+        </div>
+        <div class="about-me-text">
           <h1 class="text-highlight">Hello, I'm India Evans.</h1>
-          <p>
+          <p id="about-me-p">
             I am a full-stack web developer with a passion for front-end
             development and design. Most of my experience has been in HTML, CSS,
             JavaScript, Node.js, and Angular. When I'm not busy building
             software, I'm usually doing artsy craftsy things!
           </p>
-          <button class="button2" onclick="showPage2()">
-            >>
-          </button>
-        </article>
-        <article class="p2">
-          <p>
-            After graduating from UNC Chapel Hill with a degree in Economics, I
-            entered the financial services industry. I quickly excelled, but I
-            also quickly recognized that overall it was not the right fit for
-            me.
-          </p>
-          <p>
-            So, I took the risk of dumping my savings into a 6-month "coding
-            bootcamp" to learn what I needed to start building a career in tech
-            (while continuing working full-time).
-          </p>
-          <button class="button2" onclick="showPage1()">
-            <<
-          </button>
-          <button class="button2" onclick="showPage3()">
-            >>
-          </button>
-        </article>
-        <article class="p3">
-          <p>
-            By the end of the bootcamp, my greatest assets--my ability to solve
-            problems and my curiosity to learn--allowed me to transition into my
-            current role as a software engineer. More importantly, I found a
-            home in software development.
-          </p>
-          <button class="button2" onclick="showPage2()">
-            <<
-          </button>
-          <a href="portfolio.html" class="bouncy button2"
-            >Show me your code >></a
-          >
-        </article>
+          <div class="about-me-buttons">
+            <button class="btn back-button" disabled>
+              <<
+            </button>
+            <button class="btn next-button">
+              >>
+            </button>
+          </div>
+          <!-- <a
+            href="portfolio.html"
+            alt="View Portfolio"
+            class="text-highlight mono"
+            ><< Check out my portfolio >></a
+          > -->
+        </div>
       </section>
     </main>
     <footer>
@@ -156,37 +103,63 @@
       </section>
     </footer>
   </body>
-  <script src="assets/js/sticky.js"></script>
+  <script src="assets/js/shared.js"></script>
   <script>
-    const aboutMe1 = document.getElementsByClassName('p1')[0];
-    const aboutMe2 = document.getElementsByClassName('p2')[0];
-    const aboutMe3 = document.getElementsByClassName('p3')[0];
-    function showPage1() {
-      aboutMe2.style.transitionDelay = '0s';
-      aboutMe1.style.transitionDelay = '2s';
-      aboutMe2.style.opacity = '0';
-      aboutMe1.style.opacity = '1';
-      aboutMe1.style.zIndex = '1';
-    }
-    function showPage2() {
-      aboutMe3.style.transitionDelay = '0s';
-      aboutMe2.style.transitionDelay = '2s';
-      aboutMe1.style.transitionDelay = '0s';
-      aboutMe2.style.opacity = '1';
-      aboutMe3.style.opacity = '0';
-      aboutMe1.style.opacity = '0';
-      aboutMe1.style.zIndex = '0';
-    }
-    function showPage3() {
-      aboutMe3.style.transitionDelay = '2s';
+    const p1 = `I am a full-stack web developer with a passion for front-end development and design. Most of my experience has been in HTML, CSS, JavaScript, Node.js, and Angular. When I'm not busy building software, I'm usually doing artsy craftsy things!`,
+      p2 = `As some would say, I took the “non-traditional” path to the industry. In 2017, while working in financial services, I took a risk and dumped my savings into a 6-month coding bootcamp to learn what I needed to start building a career in tech.`,
+      p3 = `My ability to solve problems and my curiosity to learn allowed me to transition into a software engineering role by the end of the bootcamp. More importantly, I found a home in web development. I haven't stopped learning since.`,
+      pages = [p1, p2, p3];
+    let page = 0;
+    const aboutMe = document.getElementById('about-me-p');
+    const backButton = document.getElementsByClassName('back-button')[0];
+    const nextButton = document.getElementsByClassName('next-button')[0];
+    const aboutMeSection = document.getElementsByClassName('about-me')[0];
 
-      aboutMe2.style.transitionDelay = '0s';
-      aboutMe2.style.opacity = '0';
-      aboutMe3.style.opacity = '1';
+    const tHandler = throttled(1000, previousPage);
+    const tHandler2 = throttled(1000, nextPage);
+    aboutMe.innerText = pages[0];
+    setTimeout(() => changeOpacity(aboutMeSection, 1), 750);
+    backButton.addEventListener('click', tHandler);
+    nextButton.addEventListener('click', tHandler2);
+
+    function nextPage() {
+      page++;
+      if (page < pages.length) {
+        updatePage(page);
+      }
     }
 
-    function scrollToTop() {
-      window.scrollTo(0, 0);
+    function previousPage() {
+      page--;
+      if (page >= 0) {
+        updatePage(page);
+      }
+    }
+    function buttonCheck() {
+      if (page <= 0) {
+        backButton.disabled = true;
+      } else {
+        backButton.disabled = false;
+      }
+      if (page >= pages.length - 1) {
+        nextButton.disabled = true;
+      } else {
+        nextButton.disabled = false;
+      }
+    }
+    function updatePage(page) {
+      aboutMe.classList.add('fade-out');
+
+      setTimeout(function() {
+        aboutMe.innerHTML = pages[page];
+        buttonCheck();
+        aboutMe.classList.remove('fade-out');
+        aboutMe.classList.add('fade-in');
+      }, 1000);
+
+      setTimeout(function() {
+        aboutMe.classList.remove('fade-in');
+      }, 2000);
     }
   </script>
 </html>

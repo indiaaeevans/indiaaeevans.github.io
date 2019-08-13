@@ -24,22 +24,27 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="text-highlight">
-        India Evans / Web Developer / Personal Projects
-      </h1>
-      <p class="mono">
-        Below are some recent side projects I've created for my own exploration
-        of front end development.
-      </p>
-    </header>
-    <nav id="menu">
-      <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
+    <nav id="menu" class="sticky">
+      <button class="nav-logo-wrapper" title="Show/Hide Menu">
+        <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
+        <img
+          class="nav-logo-top-layer"
+          src="./assets/images/doodle-pink.png"
+          alt="Swirly Logo"
+        />
+      </button>
       <a href="index.html">HOME</a>
       <a href="about.html">ABOUT</a>
       <a class="text-highlight" href="portfolio.html">PORTFOLIO</a>
     </nav>
-    <main id="main">
+
+    <main id="main" class="portfolio">
+      <!-- <header>
+        <p class="mono">
+          Below are some recent side projects I've created for my own
+          exploration of front end development.
+        </p>
+      </header> -->
       <ul class="portfolio-section">
         <li>
           <img
@@ -48,26 +53,42 @@
             class="portfolio-image"
           />
           <div class="portfolio-links">
-            Recipe Finder |
+            <a
+              href="https://warm-earth-60999.herokuapp.com/"
+              class="btn"
+              target="_blank"
+              >Recipe Finder <i class="fas fa-external-link-square-alt"></i
+            ></a>
 
-            <a href="https://warm-earth-60999.herokuapp.com/">Demo</a> |
-            <a href="https://github.com/indiaaeevans/recipe-finder">Github</a>
+            <a
+              href="https://github.com/indiaaeevans/recipe-finder"
+              class="btn"
+              target="_blank"
+              ><i class="fas fa-code"></i
+            ></a>
           </div>
         </li>
         <li>
           <img
             src="assets/images/portfolio-images/ransom-note.png"
-            alt="Weather Finder"
+            alt="Ransom Note Generator"
             class="portfolio-image"
+            target="_blank"
           />
           <div class="portfolio-links">
-            Ransom Note Generator |
-            <a href="https://github.com/indiaaeevans/ransom-note-generator"
-              >Github</a
-            >
+            <a href="#" class="btn" target="_blank"
+              >Ransom Note Generator
+              <i class="fas fa-external-link-square-alt"></i
+            ></a>
+            <a
+              href="https://github.com/indiaaeevans/ransom-note-generator"
+              class="btn"
+              target="_blank"
+              ><i class="fas fa-code"></i
+            ></a>
           </div>
         </li>
-        <li>
+        <!-- <li>
           <img
             src="assets/images/portfolio-images/weather-app.png"
             alt="Weather Finder"
@@ -77,8 +98,8 @@
             Weather Finder |
             <a href="https://github.com/indiaaeevans/weather-webapp">Github</a>
           </div>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <img
             src="assets/images/portfolio-images/material-data-table.png"
             alt="Material Design Table"
@@ -91,8 +112,8 @@
               >Github</a
             >
           </div>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <img
             src="assets/images/portfolio-images/sk-login.png"
             alt=""
@@ -156,7 +177,7 @@
             <a href="https://indiaaeevans.github.io/Hangman-Game/">Demo</a> |
             <a href="https://github.com/indiaaeevans/Hangman-Game">Github</a>
           </div>
-        </li>
+        </li> -->
       </ul>
     </main>
     <footer>
@@ -188,10 +209,11 @@
       </section>
     </footer>
   </body>
-  <script src="assets/js/sticky.js"></script>
+  <script src="assets/js/shared.js"></script>
   <script>
-    function scrollToTop() {
-      window.scrollTo(0, 0);
-    }
+    const portfolioSection = document.getElementsByClassName(
+      'portfolio-section'
+    )[0];
+    setTimeout(() => changeOpacity(portfolioSection, 1), 750);
   </script>
 </html>
