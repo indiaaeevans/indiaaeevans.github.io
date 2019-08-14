@@ -44,7 +44,7 @@
       <a class="text-highlight" href="about.html">ABOUT</a>
       <a href="portfolio.html">PORTFOLIO</a>
     </nav>
-    <main id="main" class="about">
+    <main id="main">
       <section class="about-me mono">
         <div class="about-me-img">
           <img
@@ -113,12 +113,12 @@
     const aboutMe = document.getElementById('about-me-p');
     const backButton = document.getElementsByClassName('back-button')[0];
     const nextButton = document.getElementsByClassName('next-button')[0];
-    const aboutMeSection = document.getElementsByClassName('about-me')[0];
+    // const aboutMeSection = document.getElementsByClassName('about-me')[0];
 
     const tHandler = throttled(1000, previousPage);
     const tHandler2 = throttled(1000, nextPage);
     aboutMe.innerText = pages[0];
-    setTimeout(() => changeOpacity(aboutMeSection, 1), 750);
+    // setTimeout(() => changeOpacity(main, 1), 750);
     backButton.addEventListener('click', tHandler);
     nextButton.addEventListener('click', tHandler2);
 

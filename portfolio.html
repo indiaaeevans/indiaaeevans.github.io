@@ -38,7 +38,7 @@
       <a class="text-highlight" href="portfolio.html">PORTFOLIO</a>
     </nav>
 
-    <main id="main" class="portfolio">
+    <main id="main">
       <!-- <header>
         <p class="mono">
           Below are some recent side projects I've created for my own
@@ -47,44 +47,58 @@
       </header> -->
       <ul class="portfolio-section">
         <li>
-          <img
+          <figure>
+            <img
+              src="assets/images/portfolio-images/recipe-finder-2.png"
+              alt="Recipe Finder"
+              class="portfolio-image"
+            />
+            <figcaption class="hide-element">
+              Recipe Finder
+            </figcaption>
+          </figure>
+          <!-- <img
             src="assets/images/portfolio-images/recipe-finder-2.png"
             alt="Recipe Finder"
             class="portfolio-image"
-          />
+          /> -->
           <div class="portfolio-links">
             <a
               href="https://warm-earth-60999.herokuapp.com/"
               class="btn"
               target="_blank"
-              >Recipe Finder <i class="fas fa-external-link-square-alt"></i
+              >Demo <i class="fas fa-external-link-square-alt"></i
             ></a>
 
             <a
               href="https://github.com/indiaaeevans/recipe-finder"
               class="btn"
               target="_blank"
-              ><i class="fas fa-code"></i
+              >Code<i class="fas fa-code"></i
             ></a>
           </div>
         </li>
         <li>
-          <img
-            src="assets/images/portfolio-images/ransom-note.png"
-            alt="Ransom Note Generator"
-            class="portfolio-image"
-            target="_blank"
-          />
+          <figure>
+            <img
+              src="assets/images/portfolio-images/ransom-note.png"
+              alt="Ransom Note Generator"
+              class="portfolio-image"
+              target="_blank"
+            />
+            <figcaption class="hide-element">
+              Ransom Note Generator
+            </figcaption>
+          </figure>
           <div class="portfolio-links">
             <a href="#" class="btn" target="_blank"
-              >Ransom Note Generator
-              <i class="fas fa-external-link-square-alt"></i
+              >Demo <i class="fas fa-external-link-square-alt"></i
             ></a>
             <a
               href="https://github.com/indiaaeevans/ransom-note-generator"
               class="btn"
               target="_blank"
-              ><i class="fas fa-code"></i
+              >Code <i class="fas fa-code"></i
             ></a>
           </div>
         </li>
@@ -210,10 +224,4 @@
     </footer>
   </body>
   <script src="assets/js/shared.js"></script>
-  <script>
-    const portfolioSection = document.getElementsByClassName(
-      'portfolio-section'
-    )[0];
-    setTimeout(() => changeOpacity(portfolioSection, 1), 750);
-  </script>
 </html>

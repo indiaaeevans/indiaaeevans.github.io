@@ -1,8 +1,11 @@
 const nav = document.getElementsByTagName('nav')[0];
 const navButton = document.getElementsByClassName('nav-logo-wrapper')[0];
 const navLinks = document.querySelectorAll('nav > a');
+const main = document.querySelector('main');
 let navVisible = false;
 displayNav();
+setTimeout(() => changeOpacity(main, 1), 750);
+
 function changeOpacity(element, amount) {
   element.style.opacity = amount;
 }
