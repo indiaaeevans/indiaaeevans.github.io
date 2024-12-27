@@ -20,10 +20,10 @@
 <body>
   <main class="landing-section">
     <div class="logo-wrapper">
-      <a href="about.html">
+      <a class="logo-link" href="about.html">
         <img class="logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to About page" />
       </a>
-      <img src="./assets/images/doodle-icon.png" />
+      <img class="logo-bottom-layer" src="./assets/images/doodle-icon.png" />
     </div>
     <h1 class="giant-text">
       MAKE<br />SOMETHING<br />
@@ -121,7 +121,7 @@
         lineElement.style.opacity = '1';
       });
 
-    }, 1000); // Wait for contraction to complete
+    }, 750); // Wait for contraction to complete
   }
 
   // Run animation every 3 seconds

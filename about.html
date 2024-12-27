@@ -9,16 +9,169 @@
   <link rel="icon" href="./assets/images/doodle.png" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/14d449b047.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .fade-out {
+      opacity: 0;
+    }
+
+    .fade-in {
+      opacity: 1;
+    }
+
+    .animating {
+      transition: opacity 1s ease-in-out;
+    }
+
+    .btn {
+      background-color: var(--color-text-dark);
+      color: var(--color-text-light);
+      display: inline-block;
+      padding: 0.5em 2em;
+      border: none;
+      text-decoration: none;
+      font-size: 12px;
+      text-align: center;
+      border: 1px solid var(--color-text-dark);
+      box-shadow: rgba(255, 255, 255, .5) 0 1px 0 0 inset;
+    }
+
+    .btn span {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* TODO repeat animation in normal state? */
+    #back-button:hover span {
+      display: block;
+      transform: translate(-5px);
+    }
+
+    #next-button:hover span {
+      display: block;
+      transform: translate(5px);
+    }
+
+    #next-button {
+      border-radius: 0 3px 3px 0;
+    }
+
+    #back-button {
+      border-radius: 3px 0 0 3px;
+    }
+
+    .btn:focus-visible {
+      outline: 1px auto var(--color-background-highlight);
+    }
+
+    .btn:active {
+      box-shadow: none;
+      color: var(--color-text-highlight);
+    }
+
+    /* TODO */
+    .btn:disabled,
+    .btn:disabled:hover {
+      background: none;
+      border: none;
+      color: var(--color-text-dark);
+    }
+
+    #next-button:disabled:hover span,
+    #back-button:disabled:hover span,
+    #next-button:disabled:active,
+    #back-button:disabled:active {
+      transform: none;
+    }
+
+    .about-heading {
+      margin: 0;
+    }
+
+    .tagline {
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .round-image {
+      width: 200px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .about-me-img {
+      display: flex;
+      justify-content: center;
+      padding: 0 30px;
+    }
+
+    .about-me-text {
+      max-width: 430px;
+    }
+
+    .about-me-buttons {
+      display: flex;
+    }
+
+    .about-me {
+      display: grid;
+      padding: 36px;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr min-content;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .about-me-img {
+      grid-column: 1 / 2;
+    }
+
+    .about-me-text {
+      grid-column: 2 / 3;
+    }
+
+    .about-me-buttons {
+      grid-column: 1 / 3;
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    @media all and (max-width: 746px) {
+
+      .about-me {
+        margin-top: 80px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 18px;
+      }
+
+      .about-me-img,
+      .about-me-text,
+      .about-me-buttons {
+        grid-column: 1 / 2;
+      }
+
+      .about-me-text {
+        width: 100%;
+      }
+
+      .about-me-buttons {
+        margin-top: auto;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <nav id="menu" class="sticky">
     <a href="index.html" class="nav-logo-wrapper">
-      <img src="./assets/images/doodle-icon.png"/>
-      <img class="nav-logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to home page"/>
+      <img src="./assets/images/doodle-icon.png" />
+      <img class="nav-logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to home page" />
     </a>
     <a href="index.html" class="menu-item">Home</a>
     <a href="about.html" class="text-highlight menu-item">About</a>
@@ -29,13 +182,15 @@
       <div class="about-me-img">
         <img src="./assets/images/hand.JPG" alt="Avatar Image" class="round-image" />
       </div>
-      <div class="about-me-text">
-        <h1 class="text-highlight about-heading">Hello, I'm India Evans.</h1>
-        <div id="bio"></div>
-        <div class="about-me-buttons">
-          <button class="btn back-button" disabled><span><<</span></button>
-              <button class="btn next-button"><span>>></span></button>
+      <div>
+        <div class="about-me-text">
+          <h1 class="text-highlight about-heading">Hello, I'm India Evans.</h1>
+          <div id="bio"></div>
         </div>
+      </div>
+      <div class="about-me-buttons">
+        <button id="back-button" class="btn" disabled><span>&lt;&lt;</span></button>
+        <button id="next-button" class="btn"><span>&gt;&gt;</span></button>
       </div>
     </section>
   </main>
@@ -50,9 +205,12 @@
     </section>
     <section class="external-links">
       <a href="mailto:indiaaeevans@gmail.com" aria-label="Email India Evans"><i class="far fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/indiaevans/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com/indiaaeevans" target="_blank" aria-label="GitHub Profile"><i class="fas fa-code-branch"></i></a>
-      <a href="https://blog.indiaevans.dev" target="_blank" aria-label="Hashnode Blog"><i class="fa-brands fa-hashnode"></i></a>
+      <a href="https://www.linkedin.com/in/indiaevans/" target="_blank" aria-label="LinkedIn Profile"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/indiaaeevans" target="_blank" aria-label="GitHub Profile"><i
+          class="fas fa-code-branch"></i></a>
+      <a href="https://blog.indiaevans.dev" target="_blank" aria-label="Hashnode Blog"><i
+          class="fa-brands fa-hashnode"></i></a>
     </section>
   </footer>
 </body>
@@ -65,12 +223,13 @@
     pages = [p1, p2, p3];
   let page = 0;
   const aboutMe = document.getElementById('bio');
-  const backButton = document.getElementsByClassName('back-button')[0];
-  const nextButton = document.getElementsByClassName('next-button')[0];
+  const backButton = document.getElementById('back-button');
+  const nextButton = document.getElementById('next-button');
+  aboutMe.innerHTML = pages[0];
 
   const onBackClick = throttled(1000, goToPreviousPage);
   const onNextClick = throttled(1000, goToNextPage);
-  aboutMe.innerHTML = pages[0];
+  // TODO keydown listener
   backButton.addEventListener('click', onBackClick);
   nextButton.addEventListener('click', onNextClick);
 
@@ -87,31 +246,36 @@
       updatePage(page);
     }
   }
-  function buttonCheck() {
-    if (page <= 0) {
-      backButton.disabled = true;
-    } else {
-      backButton.disabled = false;
-    }
-    if (page >= pages.length - 1) {
-      nextButton.disabled = true;
-    } else {
-      nextButton.disabled = false;
-    }
+  function setBackAndNextButtons() {
+    backButton.disabled = page <= 0;
+    nextButton.disabled = page >= pages.length - 1;
   }
-  function updatePage(page) {
-    aboutMe.classList.add('fade-out');
 
-    setTimeout(function () {
+  function updatePage() {
+    // Add transition class
+    aboutMe.classList.add('animating');
+
+    // Start fadeout
+    aboutMe.style.opacity = '0';
+
+    // When fadeout is complete, prepare for fadein
+    setTimeout(() => {
+      // Remove transition temporarily
+      aboutMe.classList.remove('animating');
+
+      // Update to next page
       aboutMe.innerHTML = pages[page];
-      buttonCheck();
-      aboutMe.classList.remove('fade-out');
-      aboutMe.classList.add('fade-in');
-    }, 1000);
+      setBackAndNextButtons();
 
-    setTimeout(function () {
-      aboutMe.classList.remove('fade-in');
-    }, 2000);
+      // Re-add transition class
+      aboutMe.classList.add('animating');
+
+      // Start fadein animation
+      requestAnimationFrame(() => {
+        aboutMe.style.opacity = '1';
+      });
+
+    }, 1000); // Wait for fadeout to complete
   }
 </script>
 

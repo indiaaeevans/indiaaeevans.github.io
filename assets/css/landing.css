@@ -25,7 +25,19 @@
 .logo-top-layer {
   opacity: 0.9;
   position: absolute;
-  transform: translate(-5px, -5px) rotate(2deg) scale(.98)
+  transform: translate(-5px, -5px) rotate(2deg) scale(.98);
+}
+
+.logo-top-layer, .logo-bottom-layer {
+  transition: transform 100ms ease-out, opacity 100ms ease-in;
+  width: 250px;
+  height: 250px;
+}
+
+.logo-link {
+  position: relative;
+  width: 250px;
+  height: 250px;
 }
 
 .logo-top-layer:hover {
@@ -41,5 +53,5 @@
 }
 
 .animating {
-  transition: letter-spacing 1s ease-in-out, opacity 1s ease-in;
+  transition: letter-spacing 750ms ease-out, opacity 750ms ease-in;
 }

@@ -9,16 +9,79 @@
   <link rel="icon" href="./assets/images/doodle.png" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/14d449b047.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .portfolio-section {
+      padding: 30px;
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      align-items: stretch;
+      justify-content: center;
+      height: fit-content;
+      margin-top: 80px;
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .portfolio-section>li {
+      background: var(--color-text-light);
+      padding: 20px;
+      -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+      -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figcaption {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .portfolio-links {
+      width: 100%;
+      text-align: center;
+      font-weight: 300;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 16px;
+    }
+
+    .portfolio-link {
+      display: flex;
+      font-size: 16px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+    }
+
+    .portfolio-link span {
+      margin-right: 2px;
+    }
+  </style>
 </head>
 
 <body>
   <nav id="menu" class="sticky">
     <a href="index.html" class="nav-logo-wrapper">
       <img src="./assets/images/doodle-icon.png" />
-      <img class="nav-logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to home page"/>
+      <img class="nav-logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to home page" />
     </a>
     <a href="index.html" class="menu-item">Home</a>
     <a href="about.html" class="menu-item">About</a>
@@ -37,11 +100,11 @@
         <div class="portfolio-links">
           <a href="https:indiemaps.indiaevans.dev" class="portfolio-link" target="_blank"><span>Demo</span><i
               class="fa fa-external-link"></i></a>
-          <a href="https://github.com/indiaaeevans/coffee-finder" class="portfolio-link" target="_blank"><span>Code </span><i
-              class="fas fa-code"></i></a>
+          <a href="https://github.com/indiaaeevans/coffee-finder" class="portfolio-link" target="_blank"><span>Code
+            </span><i class="fas fa-code"></i></a>
         </div>
       </li>
-      <li>
+      <!-- <li>
         <figure>
           <img src="assets/images/portfolio-images/recipe-finder-2.png" alt="Recipe Finder" class="portfolio-image" />
           <figcaption>
@@ -51,8 +114,8 @@
         <div class="portfolio-links">
           <a href="https://warm-earth-60999.herokuapp.com/" class="portfolio-link" target="_blank"><span>Demo</span><i
               class="fa fa-external-link"></i></a>
-          <a href="https://github.com/indiaaeevans/recipe-finder" class="portfolio-link" target="_blank"><span>Code </span><i
-              class="fas fa-code"></i></a>
+          <a href="https://github.com/indiaaeevans/recipe-finder" class="portfolio-link" target="_blank"><span>Code
+            </span><i class="fas fa-code"></i></a>
         </div>
       </li>
       <li>
@@ -64,12 +127,12 @@
           </figcaption>
         </figure>
         <div class="portfolio-links">
-          <a href="https://immense-citadel-59133.herokuapp.com/" class="portfolio-link" target="_blank"><span>Demo</span><i
-              class="fa fa-external-link"></i></a>
-          <a href="https://github.com/indiaaeevans/ransom-note-generator" class="portfolio-link" target="_blank"><span>Code </span><i
-              class="fas fa-code"></i></a>
+          <a href="https://immense-citadel-59133.herokuapp.com/" class="portfolio-link"
+            target="_blank"><span>Demo</span><i class="fa fa-external-link"></i></a>
+          <a href="https://github.com/indiaaeevans/ransom-note-generator" class="portfolio-link"
+            target="_blank"><span>Code </span><i class="fas fa-code"></i></a>
         </div>
-      </li>
+      </li> -->
       <!-- <li>
           <img
             src="assets/images/portfolio-images/weather-app.png"
@@ -173,9 +236,12 @@
     </section>
     <section class="external-links">
       <a href="mailto:indiaaeevans@gmail.com" aria-label="Email India Evans"><i class="far fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/indiaevans/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com/indiaaeevans" target="_blank" aria-label="GitHub Profile"><i class="fas fa-code-branch"></i></a>
-      <a href="https://blog.indiaevans.dev" target="_blank" aria-label="Hashnode Blog"><i class="fa-brands fa-hashnode"></i></a>
+      <a href="https://www.linkedin.com/in/indiaevans/" target="_blank" aria-label="LinkedIn Profile"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/indiaaeevans" target="_blank" aria-label="GitHub Profile"><i
+          class="fas fa-code-branch"></i></a>
+      <a href="https://blog.indiaevans.dev" target="_blank" aria-label="Hashnode Blog"><i
+          class="fa-brands fa-hashnode"></i></a>
     </section>
   </footer>
 </body>
