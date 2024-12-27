@@ -7,27 +7,39 @@
   align-content: center;
   align-items: center;
 }
+
 .giant-text {
   margin: 0;
-  width: 360px;
   font-size: 48px;
   hyphens: auto;
-  font-family: 'Cutive Mono', monospace;
+  font-family: 'Zilla Slab', monospace;
+  font-weight: normal;
+  width: 12ch;
 }
+
 .logo-wrapper {
   margin: 0px 40px;
   position: relative;
 }
+
 .logo-top-layer {
-  opacity: 0.8;
+  opacity: 0.9;
   position: absolute;
-  transform: translate(-5px, -5px);
-  /* top: 5px;
-  right: 5px; */
+  transform: translate(-5px, -5px) rotate(2deg) scale(.98)
 }
+
 .logo-top-layer:hover {
   transform: none;
+  opacity: 1;
 }
-em {
+
+#line {
+  display: inline-block;
   font-style: normal;
+  letter-spacing: 4px;
+  opacity: 1;
+}
+
+.animating {
+  transition: letter-spacing 1s ease-in-out, opacity 1s ease-in;
 }

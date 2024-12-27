@@ -1,165 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>India Evans | Web Developer</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/images/doodle.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="assets/css/reset.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cutive+Mono|Space+Mono:400,400i"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/animations.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>India Evans | Software Engineer</title>
+  <link rel="icon" href="./assets/images/doodle.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/14d449b047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-  <body>
-    <nav id="menu" class="sticky">
-      <button class="nav-logo-wrapper" title="Show/Hide Menu">
-        <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
-        <img
-          class="nav-logo-top-layer"
-          src="./assets/images/doodle-pink.png"
-          alt="Swirly Logo"
-        />
-      </button>
-      <a href="index.html">HOME</a>
-      <a class="text-highlight" href="about.html">ABOUT</a>
-      <a href="portfolio.html">PORTFOLIO</a>
-    </nav>
-    <main id="main">
-      <section class="about-me mono">
-        <div class="about-me-img">
-          <img
-            src="./assets/images/hand.JPG"
-            alt="Avatar Image"
-            class="round-image"
-          />
+<body>
+  <nav id="menu" class="sticky">
+    <a href="index.html" class="nav-logo-wrapper">
+      <img src="./assets/images/doodle-icon.png"/>
+      <img class="nav-logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to home page"/>
+    </a>
+    <a href="index.html" class="menu-item">Home</a>
+    <a href="about.html" class="text-highlight menu-item">About</a>
+    <a href="portfolio.html" class="menu-item">Portfolio</a>
+  </nav>
+  <main>
+    <section class="about-me">
+      <div class="about-me-img">
+        <img src="./assets/images/hand.JPG" alt="Avatar Image" class="round-image" />
+      </div>
+      <div class="about-me-text">
+        <h1 class="text-highlight about-heading">Hello, I'm India Evans.</h1>
+        <div id="bio"></div>
+        <div class="about-me-buttons">
+          <button class="btn back-button" disabled><span><<</span></button>
+              <button class="btn next-button"><span>>></span></button>
         </div>
-        <div class="about-me-text">
-          <h1 class="text-highlight">Hello, I'm India Evans.</h1>
-          <p id="about-me-p">
-            I am a full-stack web developer with a passion for front-end
-            development and design. Most of my experience has been in HTML, CSS,
-            JavaScript, Node.js, and Angular. When I'm not busy building
-            software, I'm usually doing artsy craftsy things!
-          </p>
-          <div class="about-me-buttons">
-            <button class="btn back-button" disabled>
-              <<
-            </button>
-            <button class="btn next-button">
-              >>
-            </button>
-          </div>
-          <!-- <a
-            href="portfolio.html"
-            alt="View Portfolio"
-            class="text-highlight mono"
-            ><< Check out my portfolio >></a
-          > -->
-        </div>
-      </section>
-    </main>
-    <footer>
-      <section class="internal-links mono">
-        <a href="index.html">Home</a>
-        ·
-        <a href="#" onclick="scrollToTop()">About</a>
-        ·
-        <a href="portfolio.html">Portfolio</a>
-        <p class="text-muted">India Evans, Web Developer</p>
-      </section>
-      <section class="external-links">
-        <a href="mailto:indiaaeevans@gmail.com"
-          ><i class="far fa-envelope"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/indiaevans/"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-        <a href="https://github.com/indiaaeevans"
-          ><i class="fas fa-code-branch"></i
-        ></a>
-        <a href="https://medium.com/@indiaaeevans"
-          ><i class="fab fa-medium-m"></i
-        ></a>
-      </section>
-    </footer>
-  </body>
-  <script src="assets/js/shared.js"></script>
-  <script>
-    const p1 = `I am a full-stack web developer with a passion for front-end development and design. Most of my experience has been in HTML, CSS, JavaScript, Node.js, and Angular. When I'm not busy building software, I'm usually doing artsy craftsy things!`,
-      p2 = `As some would say, I took the “non-traditional” path to the industry. In 2017, while working in financial services, I took a risk and dumped my savings into a 6-month coding bootcamp to learn what I needed to start building a career in tech.`,
-      p3 = `My ability to solve problems and my curiosity to learn allowed me to transition into a software engineering role by the end of the bootcamp. More importantly, I found a home in web development. I haven't stopped learning since.`,
-      pages = [p1, p2, p3];
-    let page = 0;
-    const aboutMe = document.getElementById('about-me-p');
-    const backButton = document.getElementsByClassName('back-button')[0];
-    const nextButton = document.getElementsByClassName('next-button')[0];
-    // const aboutMeSection = document.getElementsByClassName('about-me')[0];
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section class="internal-links">
+      <a href="index.html">Home</a>
+      ·
+      <a href="#" onclick="scrollToTop()">About</a>
+      ·
+      <a href="portfolio.html">Portfolio</a>
+      <p class="text-muted">India Evans, Software Engineer</p>
+    </section>
+    <section class="external-links">
+      <a href="mailto:indiaaeevans@gmail.com" aria-label="Email India Evans"><i class="far fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/indiaevans/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/indiaaeevans" target="_blank" aria-label="GitHub Profile"><i class="fas fa-code-branch"></i></a>
+      <a href="https://blog.indiaevans.dev" target="_blank" aria-label="Hashnode Blog"><i class="fa-brands fa-hashnode"></i></a>
+    </section>
+  </footer>
+</body>
+<script src="assets/js/shared.js"></script>
+<script>
+  const p1 = `<p class="tagline">Also known as: frontend engineer, tenacious problem-solver, passionate creative, and dedicated mentor.</p><p>My specialties include building high-quality, reusable components and optimizing development workflows to help teams build better apps, faster. I'm on a quest to improve usability, performance, and accessibility across the web, while having some fun along the way.</p>`,
+    p2 = `<p>I took the “non-traditional” path to the industry. In 2017, while (miserably) working in financial services, I took a risk and dumped my savings into a 6-month coding bootcamp to learn what I needed to start building a career in tech. My ability to solve problems and my curiosity to learn allowed me to transition into a software engineering role by the end of the program.<p><b>I haven't stopped learning since.<b><p>`,
+    p3 = `<p>I'm based in Durham, NC just outside of Research Triangle Park. Outside of work, I immerse myself in sewing, crafting, exploring nature, and making a mess in the kitchen.<p>
+<p>Let's make something <em class="text-highlight">awesome</em> together.<p>`,
+    pages = [p1, p2, p3];
+  let page = 0;
+  const aboutMe = document.getElementById('bio');
+  const backButton = document.getElementsByClassName('back-button')[0];
+  const nextButton = document.getElementsByClassName('next-button')[0];
 
-    const tHandler = throttled(1000, previousPage);
-    const tHandler2 = throttled(1000, nextPage);
-    aboutMe.innerText = pages[0];
-    // setTimeout(() => changeOpacity(main, 1), 750);
-    backButton.addEventListener('click', tHandler);
-    nextButton.addEventListener('click', tHandler2);
+  const onBackClick = throttled(1000, goToPreviousPage);
+  const onNextClick = throttled(1000, goToNextPage);
+  aboutMe.innerHTML = pages[0];
+  backButton.addEventListener('click', onBackClick);
+  nextButton.addEventListener('click', onNextClick);
 
-    function nextPage() {
-      page++;
-      if (page < pages.length) {
-        updatePage(page);
-      }
+  function goToNextPage() {
+    page++;
+    if (page < pages.length) {
+      updatePage(page);
     }
+  }
 
-    function previousPage() {
-      page--;
-      if (page >= 0) {
-        updatePage(page);
-      }
+  function goToPreviousPage() {
+    page--;
+    if (page >= 0) {
+      updatePage(page);
     }
-    function buttonCheck() {
-      if (page <= 0) {
-        backButton.disabled = true;
-      } else {
-        backButton.disabled = false;
-      }
-      if (page >= pages.length - 1) {
-        nextButton.disabled = true;
-      } else {
-        nextButton.disabled = false;
-      }
+  }
+  function buttonCheck() {
+    if (page <= 0) {
+      backButton.disabled = true;
+    } else {
+      backButton.disabled = false;
     }
-    function updatePage(page) {
-      aboutMe.classList.add('fade-out');
+    if (page >= pages.length - 1) {
+      nextButton.disabled = true;
+    } else {
+      nextButton.disabled = false;
+    }
+  }
+  function updatePage(page) {
+    aboutMe.classList.add('fade-out');
 
-      setTimeout(function() {
-        aboutMe.innerHTML = pages[page];
-        buttonCheck();
-        aboutMe.classList.remove('fade-out');
-        aboutMe.classList.add('fade-in');
-      }, 1000);
+    setTimeout(function () {
+      aboutMe.innerHTML = pages[page];
+      buttonCheck();
+      aboutMe.classList.remove('fade-out');
+      aboutMe.classList.add('fade-in');
+    }, 1000);
 
-      setTimeout(function() {
-        aboutMe.classList.remove('fade-in');
-      }, 2000);
-    }
-  </script>
+    setTimeout(function () {
+      aboutMe.classList.remove('fade-in');
+    }, 2000);
+  }
+</script>
+
 </html>

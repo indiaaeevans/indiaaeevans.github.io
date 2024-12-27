@@ -1,111 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>India Evans | Web Developer</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/images/doodle.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Cutive+Mono:400"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
 
-  <body>
-    <nav id="menu" class="sticky">
-      <button class="nav-logo-wrapper" title="Show/Hide Menu">
-        <img src="./assets/images/doodle-icon.png" alt="Swirly Logo" />
-        <img
-          class="nav-logo-top-layer"
-          src="./assets/images/doodle-pink.png"
-          alt="Swirly Logo"
-        />
-      </button>
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a class="text-highlight" href="portfolio.html">PORTFOLIO</a>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>India Evans | Software Engineer</title>
+  <link rel="icon" href="./assets/images/doodle.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/14d449b047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-    <main id="main">
-      <!-- <header>
-        <p class="mono">
-          Below are some recent side projects I've created for my own
-          exploration of front end development.
-        </p>
-      </header> -->
-      <ul class="portfolio-section">
-        <li>
-          <figure>
-            <img
-              src="assets/images/portfolio-images/recipe-finder-2.png"
-              alt="Recipe Finder"
-              class="portfolio-image"
-            />
-            <figcaption class="hide-element">
-              Recipe Finder
-            </figcaption>
-          </figure>
-          <!-- <img
-            src="assets/images/portfolio-images/recipe-finder-2.png"
-            alt="Recipe Finder"
-            class="portfolio-image"
-          /> -->
-          <div class="portfolio-links">
-            <a
-              href="https://warm-earth-60999.herokuapp.com/"
-              class="btn"
-              target="_blank"
-              >Demo <i class="fas fa-external-link-square-alt"></i
-            ></a>
+<body>
+  <nav id="menu" class="sticky">
+    <a href="index.html" class="nav-logo-wrapper">
+      <img src="./assets/images/doodle-icon.png" />
+      <img class="nav-logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to home page"/>
+    </a>
+    <a href="index.html" class="menu-item">Home</a>
+    <a href="about.html" class="menu-item">About</a>
+    <a href="portfolio.html" class="text-highlight menu-item">Portfolio</a>
+  </nav>
 
-            <a
-              href="https://github.com/indiaaeevans/recipe-finder"
-              class="btn"
-              target="_blank"
-              >Code <i class="fas fa-code"></i
-            ></a>
-          </div>
-        </li>
-        <li>
-          <figure>
-            <img
-              src="assets/images/portfolio-images/ransom-note.png"
-              alt="Ransom Note Generator"
-              class="portfolio-image"
-              target="_blank"
-            />
-            <figcaption class="hide-element">
-              Ransom Note Generator
-            </figcaption>
-          </figure>
-          <div class="portfolio-links">
-            <a
-              href="https://immense-citadel-59133.herokuapp.com/"
-              class="btn"
-              target="_blank"
-              >Demo <i class="fas fa-external-link-square-alt"></i
-            ></a>
-            <a
-              href="https://github.com/indiaaeevans/ransom-note-generator"
-              class="btn"
-              target="_blank"
-              >Code <i class="fas fa-code"></i
-            ></a>
-          </div>
-        </li>
-        <!-- <li>
+  <main>
+    <ul class="portfolio-section">
+      <li>
+        <figure>
+          <img src="assets/images/portfolio-images/indie-maps.png" alt="Indie Maps" class="portfolio-image">
+          <figcaption>
+            Indie Maps
+          </figcaption>
+        </figure>
+        <div class="portfolio-links">
+          <a href="https:indiemaps.indiaevans.dev" class="portfolio-link" target="_blank"><span>Demo</span><i
+              class="fa fa-external-link"></i></a>
+          <a href="https://github.com/indiaaeevans/coffee-finder" class="portfolio-link" target="_blank"><span>Code </span><i
+              class="fas fa-code"></i></a>
+        </div>
+      </li>
+      <li>
+        <figure>
+          <img src="assets/images/portfolio-images/recipe-finder-2.png" alt="Recipe Finder" class="portfolio-image" />
+          <figcaption>
+            Recipe Finder
+          </figcaption>
+        </figure>
+        <div class="portfolio-links">
+          <a href="https://warm-earth-60999.herokuapp.com/" class="portfolio-link" target="_blank"><span>Demo</span><i
+              class="fa fa-external-link"></i></a>
+          <a href="https://github.com/indiaaeevans/recipe-finder" class="portfolio-link" target="_blank"><span>Code </span><i
+              class="fas fa-code"></i></a>
+        </div>
+      </li>
+      <li>
+        <figure>
+          <img src="assets/images/portfolio-images/ransom-note.png" alt="Ransom Note Generator" class="portfolio-image"
+            target="_blank" />
+          <figcaption>
+            Ransom Note Generator
+          </figcaption>
+        </figure>
+        <div class="portfolio-links">
+          <a href="https://immense-citadel-59133.herokuapp.com/" class="portfolio-link" target="_blank"><span>Demo</span><i
+              class="fa fa-external-link"></i></a>
+          <a href="https://github.com/indiaaeevans/ransom-note-generator" class="portfolio-link" target="_blank"><span>Code </span><i
+              class="fas fa-code"></i></a>
+        </div>
+      </li>
+      <!-- <li>
           <img
             src="assets/images/portfolio-images/weather-app.png"
             alt="Weather Finder"
@@ -116,7 +81,7 @@
             <a href="https://github.com/indiaaeevans/weather-webapp">Github</a>
           </div>
         </li> -->
-        <!-- <li>
+      <!-- <li>
           <img
             src="assets/images/portfolio-images/material-data-table.png"
             alt="Material Design Table"
@@ -130,7 +95,7 @@
             >
           </div>
         </li> -->
-        <!-- <li>
+      <!-- <li>
           <img
             src="assets/images/portfolio-images/sk-login.png"
             alt=""
@@ -195,36 +160,25 @@
             <a href="https://github.com/indiaaeevans/Hangman-Game">Github</a>
           </div>
         </li> -->
-      </ul>
-    </main>
-    <footer>
-      <section class="internal-links mono">
-        <a href="index.html">Home</a>
-        ·
-        <a href="about.html">About</a>
-        ·
-        <a href="#" onclick="scrollToTop()">Portfolio</a>
-        <p class="text-muted">India Evans, Web Developer</p>
-      </section>
-      <section class="external-links">
-        <a title="Send India an email" href="mailto:indiaaeevans@gmail.com"
-          ><i class="far fa-envelope"></i
-        ></a>
-        <a
-          title="India's LinkedIn profile"
-          href="https://www.linkedin.com/in/indiaevans/"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-        <a title="India's Github profile" href="https://github.com/indiaaeevans"
-          ><i class="fas fa-code-branch"></i
-        ></a>
-        <a
-          title="India's posts on Medium"
-          href="https://medium.com/@indiaaeevans"
-          ><i class="fab fa-medium-m"></i
-        ></a>
-      </section>
-    </footer>
-  </body>
-  <script src="assets/js/shared.js"></script>
+    </ul>
+  </main>
+  <footer>
+    <section class="internal-links">
+      <a href="index.html">Home</a>
+      ·
+      <a href="about.html">About</a>
+      ·
+      <a href="#" onclick="scrollToTop()">Portfolio</a>
+      <p class="text-muted">India Evans, Software Engineer</p>
+    </section>
+    <section class="external-links">
+      <a href="mailto:indiaaeevans@gmail.com" aria-label="Email India Evans"><i class="far fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/indiaevans/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/indiaaeevans" target="_blank" aria-label="GitHub Profile"><i class="fas fa-code-branch"></i></a>
+      <a href="https://blog.indiaevans.dev" target="_blank" aria-label="Hashnode Blog"><i class="fa-brands fa-hashnode"></i></a>
+    </section>
+  </footer>
+</body>
+<script src="assets/js/shared.js"></script>
+
 </html>

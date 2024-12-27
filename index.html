@@ -1,75 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>India Evans | Web Developer</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/images/doodle.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Cutive+Mono:400"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/landing.css" />
-  </head>
 
-  <body>
-    <main class="landing-section">
-      <div class="logo-wrapper">
-        <a href="about.html">
-          <img
-            class="logo-top-layer"
-            src="./assets/images/doodle-pink.png"
-            alt="Swirly Logo"
-          />
-        </a>
-        <img
-          src="./assets/images/doodle-icon.png"
-          alt="Swirly Logo Shadow"
-          class="bottom"
-        />
-      </div>
-      <h1 class="giant-text mono">
-        MAKE<br />SOMETHING<br />
-        <em class="text-highlight" id="word">you love</em>
-        <br />EVERY DAY.
-      </h1>
-    </main>
-    <footer>
-      <section class="internal-links mono">
-        <a href="index.html">Home</a>
-        ·
-        <a href="about.html">About</a>
-        ·
-        <a href="portfolio.html">Portfolio</a>
-        <p class="text-muted">India Evans, Web Developer</p>
-      </section>
-      <section class="external-links">
-        <a href="mailto:indiaaeevans@gmail.com"
-          ><i class="far fa-envelope"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/indiaevans/"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-        <a href="https://github.com/indiaaeevans"
-          ><i class="fas fa-code-branch"></i
-        ></a>
-        <a href="https://medium.com/@indiaaeevans"
-          ><i class="fab fa-medium-m"></i
-        ></a>
-      </section>
-    </footer>
-  </body>
-  <script src="assets/js/message.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>India Evans | Software Engineer</title>
+  <link rel="icon" href="./assets/images/doodle.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/14d449b047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/landing.css" />
+</head>
+
+<body>
+  <main class="landing-section">
+    <div class="logo-wrapper">
+      <a href="about.html">
+        <img class="logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to About page" />
+      </a>
+      <img src="./assets/images/doodle-icon.png" />
+    </div>
+    <h1 class="giant-text">
+      MAKE<br />SOMETHING<br />
+      <span id="line"><em class="text-highlight" id="word">you love</em>.</span>
+    </h1>
+  </main>
+  <footer>
+    <section class="internal-links">
+      <a href="index.html">Home</a>
+      ·
+      <a href="about.html">About</a>
+      ·
+      <a href="portfolio.html">Portfolio</a>
+      <p class="text-muted">India Evans, Software Engineer</p>
+    </section>
+    <section class="external-links">
+      <a href="mailto:indiaaeevans@gmail.com" aria-label="Email India Evans"><i class="far fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/indiaevans/" target="_blank" aria-label="LinkedIn Profile"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/indiaaeevans" target="_blank" aria-label="GitHub Profile"><i
+          class="fas fa-code-branch"></i></a>
+      <a href="https://blog.indiaevans.dev" target="_blank" aria-label="Hashnode Blog"><i
+          class="fa-brands fa-hashnode"></i></a>
+    </section>
+  </footer>
+</body>
+<script>
+  const wordElement = document.getElementById('word');
+  const lineElement = document.getElementById('line');
+  const words = [
+    'cool',
+    'exceptional',
+    'authentic',
+    'effective',
+    'impactful',
+    'functional',
+    'valuable',
+    'useful',
+    'inspiring',
+    'brilliant',
+    'wonderful',
+    'amazing',
+    'stunning',
+    'staggering',
+    'impressive',
+    'mind-boggling',
+    'weird',
+    'mind-blowing',
+    'jaw-dropping',
+    'excellent',
+    'marvelous',
+    'inventive',
+    'imaginative',
+    'innovative',
+    'experimental',
+    'expressive',
+    'challenging',
+    'visionary',
+    'clever',
+    'silly',
+    'colorful',
+    'interesting',
+    'different',
+    'with care'
+  ];
+
+  let currentWordIndex = 0;
+
+  function animateWord() {
+    // Add transition class
+    lineElement.classList.add('animating');
+
+    // Start contraction
+    lineElement.style.letterSpacing = '-8px';
+    lineElement.style.opacity = '0';
+
+    // When contraction is complete, prepare for expansion
+    setTimeout(() => {
+      // Remove transition temporarily
+      lineElement.classList.remove('animating');
+
+      // Update to next word and reset letter-spacing without animation
+      currentWordIndex = (currentWordIndex + 1) % words.length;
+      wordElement.textContent = words[currentWordIndex];
+
+      // Force browser to register the collapsed state
+      lineElement.offsetHeight;
+
+      // Re-add transition class
+      lineElement.classList.add('animating');
+
+      // Start expansion animation
+      requestAnimationFrame(() => {
+        lineElement.style.letterSpacing = '4px';
+        lineElement.style.opacity = '1';
+      });
+
+    }, 1000); // Wait for contraction to complete
+  }
+
+  // Run animation every 3 seconds
+  setInterval(animateWord, 3000);
+</script>
+
 </html>
