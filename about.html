@@ -15,6 +15,13 @@
   <script src="https://kit.fontawesome.com/14d449b047.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
+    .about {
+      opacity: 0;
+      transition: opacity 2s;
+      display: flex;
+      justify-content: center;
+    }
+
     .fade-out {
       opacity: 0;
     }
@@ -24,7 +31,7 @@
     }
 
     .animating {
-      transition: opacity 1s ease-in-out;
+      transition: opacity 750ms ease-in-out;
     }
 
     .btn {
@@ -42,17 +49,24 @@
 
     .btn span {
       transition: transform 0.3s ease-in-out;
+      display: block;
     }
 
     /* TODO repeat animation in normal state? */
     #back-button:hover span {
-      display: block;
       transform: translate(-5px);
     }
 
+    #back-button:active span {
+      transform: translate(-8px);
+    }
+
     #next-button:hover span {
-      display: block;
       transform: translate(5px);
+    }
+
+    #next-button:active span {
+      transform: translate(8px);
     }
 
     #next-button {
@@ -69,10 +83,8 @@
 
     .btn:active {
       box-shadow: none;
-      color: var(--color-text-highlight);
     }
 
-    /* TODO */
     .btn:disabled,
     .btn:disabled:hover {
       background: none;
@@ -140,6 +152,60 @@
       gap: 2px;
     }
 
+    .skills {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      font-size: .75em;
+      margin-bottom: 0.5em;
+      background-color: var(--color-text-dark);
+      color: var(--color-text-dark);
+      display: inline-block;
+      padding: 0.5em 2em;
+      border: none;
+      text-align: center;
+      border: 1px solid var(--color-text-dark);
+      box-shadow: rgba(255, 255, 255, .5) 0 1px 0 0 inset;
+      flex-grow: 1;
+      margin: 2px;
+    }
+:root {
+  --color-orange: #fb8066;
+  --color-blue: #70D6FF;
+  --color-green: #32CD32;
+  --color-purple: #DF73FF;
+  --color-yellow: #E9FF70;
+  --color-pink: #FFC6FF;
+}
+    .dev-skill {
+      background-color: var(--color-pink);
+      /* color: #ffffff; */
+    }
+
+    .testing-skill {
+      background-color: var(--color-orange);
+      /* color: #ffdd00; */
+    }
+
+    .build-tools-skill {
+      background-color: var(--color-yellow);
+      /* color: #00ff00; */
+    }
+
+    .devops-skill {
+      background-color: var(--color-blue);
+      /* color: #ff0000; */
+    }
+
+    .ux-skill {
+      background-color: var(--color-purple);
+      /* color: #ff00ff; */
+    }
+
     @media all and (max-width: 746px) {
 
       .about-me {
@@ -177,7 +243,7 @@
     <a href="about.html" class="text-highlight menu-item">About</a>
     <a href="portfolio.html" class="menu-item">Portfolio</a>
   </nav>
-  <main>
+  <main class="about">
     <section class="about-me">
       <div class="about-me-img">
         <img src="./assets/images/hand.JPG" alt="Avatar Image" class="round-image" />
@@ -220,7 +286,40 @@
     p2 = `<p>I took the “non-traditional” path to the industry. In 2017, while (miserably) working in financial services, I took a risk and dumped my savings into a 6-month coding bootcamp to learn what I needed to start building a career in tech. My ability to solve problems and my curiosity to learn allowed me to transition into a software engineering role by the end of the program.<p><b>I haven't stopped learning since.<b><p>`,
     p3 = `<p>I'm based in Durham, NC just outside of Research Triangle Park. Outside of work, I immerse myself in sewing, crafting, exploring nature, and making a mess in the kitchen.<p>
 <p>Let's make something <em class="text-highlight">awesome</em> together.<p>`,
-    pages = [p1, p2, p3];
+    p4 = `
+  <p>Some skills I've picked up along the way...</p>
+    <ul class="skills">
+        <li class="skill dev-skill">HTML</li>
+        <li class="skill dev-skill">CSS, Sass</li>
+        <li class="skill dev-skill">JavaScript</li>
+        <li class="skill dev-skill">Typescript</li>
+        <li class="skill dev-skill">Angular</li>
+        <li class="skill dev-skill">React</li>
+        <li class="skill dev-skill">Vue</li>
+        <li class="skill dev-skill">Web Components</li>
+        <li class="skill dev-skill">Lit Element</li>
+        <li class="skill dev-skill">Markdown, MDX</li>
+        <li class="skill dev-skill">GraphQL</li>
+        <li class="skill dev-skill">Highcharts</li>
+        <li class="skill testing-skill">Jest</li>
+        <li class="skill testing-skill">Playwright</li>
+        <li class="skill testing-skill">Storybook</li>
+        <li class="skill build-tools-skill">Node, npm</li>
+        <li class="skill build-tools-skill">Nx</li>
+        <li class="skill build-tools-skill">Webpack</li>
+        <li class="skill build-tools-skill">Vite</li>
+        <li class="skill build-tools-skill">Eslint</li>
+        <li class="skill build-tools-skill">Stylelint</li>
+        <li class="skill devops-skill">Docker</li>
+        <li class="skill devops-skill">Jenkins</li>
+        <li class="skill devops-skill">AWS</li>
+        <li class="skill devops-skill">Git</li>
+        <li class="skill ux-skill">Responsive Design</li>
+        <li class="skill ux-skill">Accessibility</li>
+        <li class="skill ux-skill">Technical Writing</li>
+    </ul>
+  `;
+  pages = [p1, p2, p4, p3];
   let page = 0;
   const aboutMe = document.getElementById('bio');
   const backButton = document.getElementById('back-button');
@@ -275,7 +374,7 @@
         aboutMe.style.opacity = '1';
       });
 
-    }, 1000); // Wait for fadeout to complete
+    }, 750); // Wait for fadeout to complete
   }
 </script>
 

@@ -1,5 +1,4 @@
 .landing-section {
-  min-height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -50,6 +49,7 @@
   font-style: normal;
   letter-spacing: 4px;
   opacity: 1;
+  text-wrap: nowrap;
 }
 
 .animating {

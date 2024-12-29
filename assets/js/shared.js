@@ -15,9 +15,9 @@ function scrollToTop() {
 // TODO only fade in nav when navigating from landing page
 function displayNav() {
   if (!navVisible) {
-    setTimeout(() => {
-      nav.classList.add('nav-background');
-    }, 250);
+    // setTimeout(() => {
+    //   nav.classList.add('nav-background');
+    // }, 250);
 
     navLinks.forEach((element, index) => {
       setTimeout(() => {
@@ -26,7 +26,7 @@ function displayNav() {
     });
     navVisible = true;
   } else {
-    nav.classList.remove('nav-background');
+    // nav.classList.remove('nav-background');
     navLinks.forEach(element => {
       changeOpacity(element, 0);
     });
