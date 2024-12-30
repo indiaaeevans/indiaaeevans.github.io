@@ -288,11 +288,11 @@
 </body>
 <script src="assets/js/shared.js"></script>
 <script>
-  const p1 = `<p class="tagline">Also known as: frontend engineer, tenacious problem-solver, passionate creative, and dedicated mentor.</p><p>My specialties include building high-quality, reusable components and optimizing development workflows to help teams build better apps, faster. I'm on a quest to improve usability, performance, and accessibility across the web, while having some fun along the way.</p>`,
-    p2 = `<p>I took the “non-traditional” path to the industry. In 2017, while (miserably) working in financial services, I took a risk and dumped my savings into a 6-month coding bootcamp to learn what I needed to start building a career in tech. My ability to solve problems and my curiosity to learn allowed me to transition into a software engineering role by the end of the program.<p><b>I haven't stopped learning since.<b><p>`,
-    p3 = `<p>I'm based in Durham, NC just outside of Research Triangle Park. Outside of work, I immerse myself in sewing, crafting, exploring nature, and making a mess in the kitchen.<p>
+  const devSection = `<p class="tagline">Also known as: frontend engineer, tenacious problem-solver, passionate creative, and dedicated mentor.</p><p>My specialties include building high-quality, reusable components and optimizing development workflows to help teams build better apps, faster. I'm on a quest to improve usability, performance, and accessibility across the web, while having some fun along the way.</p>`,
+    careerSection = `<p>I took the “non-traditional” path to the industry. In 2017, while (miserably) working in financial services, I took a risk and dumped my savings into a 6-month coding bootcamp to learn what I needed to start building a career in tech. My ability to solve problems and my curiosity to learn allowed me to transition into a software engineering role by the end of the program.<p><b>I haven't stopped learning since.<b><p>`,
+    personalSection = `<p>I'm based in Durham, NC just outside of Research Triangle Park. Outside of work, I immerse myself in sewing, crafting, exploring nature, and making a mess in the kitchen.<p>
 <p>Let's make something <em class="text-highlight">awesome</em> together.<p>`,
-    p4 = `
+    skillsSection = `
   <p>Some skills I've picked up along the way...</p>
     <ul class="skills">
         <li class="skill dev-skill">HTML</li>
@@ -325,7 +325,7 @@
         <li class="skill ux-skill">Technical Writing</li>
     </ul>
   `;
-  pages = [p1, p2, p4, p3];
+  pages = [devSection, careerSection, skillsSection, personalSection];
   let pageIndex = 0;
   const aboutMe = document.getElementById('bio');
   const backButton = document.getElementById('back-button');
@@ -336,9 +336,9 @@
     pageIndex = getPageFromUrl();
     updatePage(pageIndex);
   });
-  const onBackClick = throttled(1000, goToPreviousPage);
-  const onNextClick = throttled(1000, goToNextPage);
-  const onKeydown = throttled(1000, togglePages);
+  const onBackClick = throttled(500, goToPreviousPage);
+  const onNextClick = throttled(500, goToNextPage);
+  const onKeydown = throttled(500, togglePages);
   backButton.addEventListener('click', onBackClick);
   nextButton.addEventListener('click', onNextClick);
   document.addEventListener('keydown', onKeydown);
@@ -352,6 +352,8 @@
   }
 
   function goToNextPage() {
+    console.log(pageIndex);
+
     if (pageIndex < pages.length - 1) {
       pageIndex++;
       updatePage(pageIndex);
@@ -359,12 +361,13 @@
   }
 
   function goToPreviousPage() {
+    console.log(pageIndex);
     if (pageIndex > 0) {
       pageIndex--;
       updatePage(pageIndex);
     }
   }
-  
+
   function setBackAndNextButtons() {
     backButton.disabled = pageIndex <= 0;
     nextButton.disabled = pageIndex >= pages.length - 1;
@@ -390,15 +393,16 @@
       const urlParams = new URLSearchParams(window.location.search);
       urlParams.set('page', pageIndex + 1);
       window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
-      // TODO only on skills page
-      const items = document.querySelectorAll('.skill');
-      let delay = 100;
 
-      items.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('drop-in');
-        }, index * delay);
-      });
+      if (pageIndex === 2) {
+        const items = document.querySelectorAll('.skill');
+        let delay = 100;
+        items.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add('drop-in');
+          }, index * delay);
+        });
+      }
 
       // Re-add transition class
       aboutMe.classList.add('animating');
@@ -410,18 +414,32 @@
 
     }, 750); // Wait for fadeout to complete
   }
-  
+
   function getPageFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
     const pageParam = urlParams.get('page');
     let currentPage;
     if (pageParam) {
       currentPage = parseInt(pageParam, 10) - 1;
+    } else {
+      currentPage = 0;
     }
     if (currentPage < 0 || currentPage >= pages.length) {
       currentPage = 0;
     }
     return currentPage;
+  }
+
+  function throttled(delay, fn) {
+    let lastCall = 0;
+    return function (...args) {
+      const now = new Date().getTime();
+      if (now - lastCall < delay) {
+        return;
+      }
+      lastCall = now;
+      return fn(...args);
+    };
   }
 
 </script>

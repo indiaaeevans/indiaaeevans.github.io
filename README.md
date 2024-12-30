@@ -28,3 +28,6 @@ vanilla html, css, & js
 - [ ] js cleanup
 - [ ] self host fonts
 - [ ] add reduced motion toggle
+
+### fun extras
+- [ ] make skills draggable
