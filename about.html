@@ -120,10 +120,6 @@
       padding: 0 30px;
     }
 
-    .about-me-text {
-      max-width: 430px;
-    }
-
     .about-me-buttons {
       display: flex;
     }
@@ -142,6 +138,7 @@
     }
 
     .about-me-text {
+      max-width: 430px;
       grid-column: 2 / 3;
     }
 
@@ -172,15 +169,25 @@
       box-shadow: rgba(255, 255, 255, .5) 0 3px 0 0 inset;
       flex-grow: 1;
       margin: 2px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-:root {
-  --color-orange: #fb8066;
-  --color-blue: #70D6FF;
-  --color-green: #32CD32;
-  --color-purple: #DF73FF;
-  --color-yellow: #E9FF70;
-  --color-pink: #FFC6FF;
-}
+
+    .drop-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    :root {
+      --color-orange: #fb8066;
+      --color-blue: #70D6FF;
+      --color-green: #32CD32;
+      --color-purple: #DF73FF;
+      --color-yellow: #E9FF70;
+      --color-pink: #FFC6FF;
+    }
+
     .dev-skill {
       background-color: var(--color-pink);
       /* color: #ffffff; */
@@ -213,6 +220,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         padding: 18px;
+        align-items: end;
       }
 
       .about-me-img,
@@ -223,10 +231,10 @@
 
       .about-me-text {
         width: 100%;
+        align-self: start;
       }
 
       .about-me-buttons {
-        margin-top: auto;
         justify-content: center;
       }
     }
@@ -236,7 +244,7 @@
 <body>
   <nav id="menu" class="sticky">
     <a href="index.html" class="nav-logo-wrapper">
-      <img src="./assets/images/doodle-icon.png" alt=""/>
+      <img src="./assets/images/doodle-icon.png" alt="" />
       <img class="nav-logo-top-layer" src="./assets/images/doodle-pink.png" alt="Go to home page" />
     </a>
     <a href="index.html" class="menu-item">Home</a>
@@ -248,11 +256,9 @@
       <div class="about-me-img">
         <img src="./assets/images/hand.JPG" alt="" class="round-image" />
       </div>
-      <div>
-        <div class="about-me-text">
-          <h1 class="text-highlight about-heading">Hello, I'm India Evans.</h1>
-          <div id="bio"></div>
-        </div>
+      <div class="about-me-text">
+        <h1 class="text-highlight about-heading">Hello, I'm India Evans.</h1>
+        <div id="bio"></div>
       </div>
       <div class="about-me-buttons">
         <button id="back-button" class="btn" disabled><span>&lt;&lt;</span></button>
@@ -366,6 +372,15 @@
       aboutMe.innerHTML = pages[page];
       setBackAndNextButtons();
 
+      const items = document.querySelectorAll('.skill');
+      let delay = 100;
+
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('drop-in');
+        }, index * delay);
+      });
+
       // Re-add transition class
       aboutMe.classList.add('animating');
 
@@ -376,6 +391,7 @@
 
     }, 750); // Wait for fadeout to complete
   }
+
 </script>
 
 </html>
