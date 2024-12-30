@@ -15,8 +15,10 @@ vanilla html, css, & js
 - [ ] replace text animation
 
 ### about
-- [ ] use query params to track "page"
-- [ ] keyboard navigation for flipping pages
+- [x] use query params to track "page"
+- [x] check query params on load to deep link to "page"
+- [x] keyboard navigation for flipping pages
+- [ ] add hint for keyboard controls
 
 ### portfolio
 - [ ] add more examples

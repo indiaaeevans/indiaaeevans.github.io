@@ -326,37 +326,51 @@
     </ul>
   `;
   pages = [p1, p2, p4, p3];
-  let page = 0;
+  let pageIndex = 0;
   const aboutMe = document.getElementById('bio');
   const backButton = document.getElementById('back-button');
   const nextButton = document.getElementById('next-button');
-  aboutMe.innerHTML = pages[0];
 
+  // event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    pageIndex = getPageFromUrl();
+    updatePage(pageIndex);
+  });
   const onBackClick = throttled(1000, goToPreviousPage);
   const onNextClick = throttled(1000, goToNextPage);
-  // TODO keydown listener
+  const onKeydown = throttled(1000, togglePages);
   backButton.addEventListener('click', onBackClick);
   nextButton.addEventListener('click', onNextClick);
+  document.addEventListener('keydown', onKeydown);
+
+  function togglePages(event) {
+    if (event.key === 'ArrowLeft') {
+      goToPreviousPage();
+    } else if (event.key === 'ArrowRight') {
+      goToNextPage();
+    }
+  }
 
   function goToNextPage() {
-    page++;
-    if (page < pages.length) {
-      updatePage(page);
+    if (pageIndex < pages.length - 1) {
+      pageIndex++;
+      updatePage(pageIndex);
     }
   }
 
   function goToPreviousPage() {
-    page--;
-    if (page >= 0) {
-      updatePage(page);
+    if (pageIndex > 0) {
+      pageIndex--;
+      updatePage(pageIndex);
     }
   }
+  
   function setBackAndNextButtons() {
-    backButton.disabled = page <= 0;
-    nextButton.disabled = page >= pages.length - 1;
+    backButton.disabled = pageIndex <= 0;
+    nextButton.disabled = pageIndex >= pages.length - 1;
   }
 
-  function updatePage() {
+  function updatePage(pageIndex = 0) {
     // Add transition class
     aboutMe.classList.add('animating');
 
@@ -368,10 +382,15 @@
       // Remove transition temporarily
       aboutMe.classList.remove('animating');
 
-      // Update to next page
-      aboutMe.innerHTML = pages[page];
+      // set the content to current page and update buttons
+      aboutMe.innerHTML = pages[pageIndex];
       setBackAndNextButtons();
 
+      // Update the URL with the current page number
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.set('page', pageIndex + 1);
+      window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+      // TODO only on skills page
       const items = document.querySelectorAll('.skill');
       let delay = 100;
 
@@ -390,6 +409,19 @@
       });
 
     }, 750); // Wait for fadeout to complete
+  }
+  
+  function getPageFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageParam = urlParams.get('page');
+    let currentPage;
+    if (pageParam) {
+      currentPage = parseInt(pageParam, 10) - 1;
+    }
+    if (currentPage < 0 || currentPage >= pages.length) {
+      currentPage = 0;
+    }
+    return currentPage;
   }
 
 </script>
