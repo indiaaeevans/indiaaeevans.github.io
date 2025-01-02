@@ -18,30 +18,32 @@
 
 .logo-wrapper {
   margin: 0px 40px;
-  position: relative;
-}
-
-.logo-top-layer {
-  opacity: 0.9;
-  position: absolute;
-  transform: translate(-5px, -5px) rotate(2deg) scale(.98);
-}
-
-.logo-top-layer, .logo-bottom-layer {
-  transition: transform 100ms ease-out, opacity 100ms ease-in;
   width: 250px;
   height: 250px;
+}
+
+.logo-svg {
+  fill: var(--color-text-highlight);
+  transition: transform 200ms ease-out, filter 200ms ease-in;
+  /* filter: drop-shadow(2px 2px 1px var(--color-text-dark)); */
+  filter: url(#inset-shadow) drop-shadow(2px 2px 4px var(--color-text-dark));
+  stroke: var(--color-text-dark);
 }
 
 .logo-link {
-  position: relative;
   width: 250px;
   height: 250px;
 }
 
-.logo-top-layer:hover {
-  transform: none;
-  opacity: 1;
+.logo-link:hover .logo-svg {
+  transform: rotate(-2deg);
+  filter: url(#inset-shadow) drop-shadow(3px 3px 4px var(--color-text-dark));
+}
+
+.logo-link:active .logo-svg {
+  transform: translate(2px, 2px) rotate(-4deg) scale(.95);
+  filter: url(#inset-shadow) drop-shadow(1px 1px 4px var(--color-text-dark));
+  /* filter: url(#inset-shadow); */
 }
 
 #line {

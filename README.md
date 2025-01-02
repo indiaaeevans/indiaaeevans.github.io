@@ -11,7 +11,6 @@ vanilla html, css, & js
 ## todos
 
 ### landing
-- [ ] replace png illustrations with svg
 - [ ] replace text animation
 
 ### about
@@ -28,6 +27,8 @@ vanilla html, css, & js
 - [ ] js cleanup
 - [ ] self host fonts
 - [ ] add reduced motion toggle
+- [x] replace png illustrations with svg
 
 ### fun extras
 - [ ] make skills draggable
+- [ ] dark mode
