@@ -27,6 +27,11 @@
   text-shadow: 1px 1px 0 var(--color-purple), 2px 2px 0 var(--color-green), 3px 3px 0 var(--color-blue);
 }
 
+.site-entry-link:hover .site-entry-link__text {
+  color: var(--color-text-dark);
+  text-shadow: 1px 1px 0 var(--color-purple), 2px 2px 0 var(--color-green), 3px 3px 0 var(--color-blue), 4px 4px 0 var(--color-orange);
+}
+
 .site-entry-link__logo {
   transition: transform 200ms ease-out;
   filter: drop-shadow(1px 1px 0 var(--color-purple)) drop-shadow(2px 2px 0 var(--color-text-highlight));
@@ -49,8 +54,9 @@
     flex-direction: column;
     gap: 12px;
   }
+
   .site-entry-link .site-entry-link__logo {
-  /* TODO animate logo in mobile */
+    /* TODO animate logo in mobile */
   }
 }
 
