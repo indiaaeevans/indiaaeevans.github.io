@@ -11,7 +11,7 @@ vanilla html, css, & js
 ## todos
 
 ### landing
-- [ ] replace text animation
+- [x] replace text animation
 
 ### about
 - [x] use query params to track "page"

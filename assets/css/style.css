@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -64,7 +65,7 @@ nav {
 .menu-item {
   display: block;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   opacity: 0;
   transition: opacity 2s;
   color: var(--color-text-extra-dark);
@@ -95,6 +96,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  gap: 24px;
   border-top: solid 3px var(--color-border-highlight);
 }
 
@@ -108,7 +110,8 @@ footer .external-links a:hover {
 
 .text-muted {
   color: #8f9296;
-  font-size: 14px;
+  font-size: .875rem;
+  margin: 12px 0 0;
 }
 
 .text-highlight {
@@ -136,16 +139,16 @@ footer .external-links a:hover {
 .sticky+main {
   /* margin-top: 80px; */
 }
-
+/* todo font size needed? */
 main {
-  font-size: 18px;
+  font-size: 1.125rem; 
   height: 100%;
   min-height: 100vh;
   /* min-height: calc(100vh - 80px); */
 }
 
 .external-links {
-  font-size: 24px;
+  font-size: 1.5rem;
   width: 175px;
   display: flex;
   flex-direction: row;
@@ -157,7 +160,7 @@ main {
 }
 
 .internal-links>a {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .nav-logo-link {
