@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   background-color: var(--color-background-light);
   background-image: url('../images/background-images/concrete.png');
@@ -143,7 +143,7 @@ footer .external-links a:hover {
 main {
   font-size: 1.125rem; 
   height: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   /* min-height: calc(100vh - 80px); */
 }
 
