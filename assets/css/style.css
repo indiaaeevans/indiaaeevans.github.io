@@ -67,8 +67,7 @@ nav {
   display: block;
   text-align: center;
   font-size: 1.125rem;
-  opacity: 0;
-  transition: opacity 2s;
+  transition: opacity 2s, color 1s;
   color: var(--color-text-extra-dark);
 }
 
