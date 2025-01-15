@@ -1,17 +1,20 @@
 :root {
-  --color-text-highlight: #eb2bbe;
-  --color-text-dark: #2B363B;
-  --color-text-extra-dark: #1A2023;
-  --color-text-light: #F3F5F6;
-  --color-background-light: #F3F5F6;
-  --color-background-dark: #2B363B;
-  --color-border-highlight: #eb2bbe;
+  --color-neutral-light: #F3F5F6;
+  --color-neutral-dark: #2B363B;
+  --color-neutral-extra-dark: #1A2023;
+  --color-highlight: #eb2bbe;
   --color-orange: #fb8066;
   --color-blue: #70D6FF;
   --color-green: #32CD32;
   --color-purple: #DF73FF;
   --color-yellow: #E9FF70;
   --color-pink: #FFC6FF;
+  --color-text-light: var(--color-neutral-light);
+  --body-background-color: var(--color-neutral-light);
+  --footer-background-color: var(--color-neutral-dark);
+  --skill-background-color: var(--color-neutral-light);
+  --color-text-dark: var(--color-neutral-dark);
+  --color-border-highlight: var(--color-highlight);
 }
 
 * {
@@ -27,7 +30,7 @@ html {
 body {
   min-height: 100dvh;
   margin: 0;
-  background-color: var(--color-background-light);
+  background-color: var(--body-background-color);
   background-image: url('../images/background-images/concrete.png');
   color: var(--color-text-dark);
 }
@@ -42,11 +45,11 @@ li {
 
 a {
   text-decoration: none;
-  color: var(--color-text-extra-dark);
+  color: var(--color-text-dark);
 }
 
 a:hover {
-  color: var(--color-text-highlight);
+  color: var(--color-highlight);
 }
 
 nav {
@@ -85,7 +88,7 @@ nav {
 
 footer {
   height: 200px;
-  background-color: var(--color-background-dark);
+  background-color: var(--footer-background-color);
   /* background-image: url(../images/background-images/concrete.png);
   background-blend-mode: overlay; */
   padding: 40px 16px;
@@ -94,7 +97,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  gap: 24px;
+  gap: 0;
   border-top: solid 3px var(--color-border-highlight);
 }
 
@@ -113,7 +116,7 @@ footer .external-links a:hover {
 }
 
 .text-highlight {
-  color: var(--color-text-highlight);
+  color: var(--color-highlight);
   /* text-wrap: nowrap; */
   font-style: normal;
   font-weight: bold;
@@ -174,11 +177,11 @@ main {
 /* TODO dark mode */
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --color-text-highlight: var(--color-orange);
+    --color-highlight: var(--color-orange);
   }
   body {
     background-image: none;
-    background-color: var(--color-background-dark);
+    background-color: var(--color-neutral-dark);
     color: var(--color-text-light);
   }
   a {
