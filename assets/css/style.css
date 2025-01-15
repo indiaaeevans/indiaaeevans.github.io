@@ -88,7 +88,6 @@ footer {
   background-color: var(--color-background-dark);
   /* background-image: url(../images/background-images/concrete.png);
   background-blend-mode: overlay; */
-  background: linear-gradient(rgba(43,54,59, .5), rgba(43,54,59, .5)), url(../images/background-images/stardust.png);
   padding: 40px 16px;
   display: flex;
   flex-direction: row;
