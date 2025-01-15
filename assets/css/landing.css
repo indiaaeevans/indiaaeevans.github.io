@@ -34,14 +34,14 @@
 
 .site-entry-link__logo {
   transition: transform 200ms ease-out;
-  filter: drop-shadow(1px 1px 0 var(--color-purple)) drop-shadow(2px 2px 0 var(--color-text-highlight));
+  filter: drop-shadow(1px 1px 0 var(--color-purple)) drop-shadow(2px 2px 0 var(--color-blue));
   width: 250px;
   height: 250px;
 }
 
 .site-entry-link:hover .site-entry-link__logo {
   transform: rotate(-2deg);
-  filter: drop-shadow(1px 1px 0 var(--color-purple)) drop-shadow(3px 3px 0 var(--color-text-highlight));
+  filter: drop-shadow(1px 1px 0 var(--color-purple)) drop-shadow(3px 3px 0 var(--color-blue));
 }
 
 .site-entry-link:active .site-entry-link__logo {
@@ -55,8 +55,28 @@
     gap: 12px;
   }
 
+  .site-entry-link:active .site-entry-link__logo {
+    animation: none;
+  }
+  
+  /* TODO animate logo in mobile */
   .site-entry-link .site-entry-link__logo {
-    /* TODO animate logo in mobile */
+    /* animation: logoTransform 1s infinite ease-in-out; */
+  }
+
+  @keyframes logoTransform {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: rotate(-4deg) scale(1.15);
+
+    }
+
+    100% {
+      transform: rotate(0) scale(1);
+    }
   }
 }
 
