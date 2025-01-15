@@ -5,7 +5,7 @@
         }
         @media (prefers-color-scheme: dark) {
             #doodle {
-                fill: #ff1d8e;
+                fill: #eb2bbe;
             }
         }
       </style>
