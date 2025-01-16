@@ -19,6 +19,13 @@
   <script src="https://kit.fontawesome.com/14d449b047.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
+    /* wavy border styles */
+    :root {
+      --wave-size: 15px;
+      --image-width: 200px;
+      --wavy-border-color: var(--color-neutral-extra-dark);
+    }
+
     .menu-item {
       opacity: 0;
     }
@@ -109,17 +116,27 @@
       margin-bottom: 12px;
     }
 
-    .round-image {
+    .about-me__image {
       width: 200px;
       height: auto;
-      border-radius: 50%;
+      /* border-radius: 50%; */
+      width: round(var(--image-width), 2*var(--wave-size));
+      aspect-ratio: 1;
+      padding: var(--wave-size);
+      border-radius: calc(1.5*var(--wave-size));
+      --R: calc(var(--wave-size)/sqrt(2)) at;
+      --g: radial-gradient(var(--R) 50%, var(--wavy-border-color) calc(100% - 1px), #0000) 0 0/calc(2*var(--wave-size)) calc(2*var(--wave-size));
+      --_c: #0000 100%, var(--wavy-border-color) calc(100% + 1px);
+      --_b: calc(2*var(--wave-size)) calc(51% - var(--wave-size)/2) repeat-x;
+      background: var(--g),
+        radial-gradient(var(--R) 50% calc(100% + var(--wave-size)/2), var(--_c)) var(--wave-size) calc(100% - var(--wave-size)/2)/var(--_b),
+        radial-gradient(var(--R) 50% calc(var(--wave-size)/-2), var(--_c)) var(--wave-size) calc(var(--wave-size)/2)/var(--_b);
+      --_m: var(--wave-size)/calc(51% - var(--wave-size)/2) calc(2*var(--wave-size)) repeat-y;
+      mask: var(--g),
+        radial-gradient(var(--R) calc(100% + var(--wave-size)/2) 50%, var(--_c)) calc(100% - var(--wave-size)/2) var(--_m),
+        radial-gradient(var(--R) calc(var(--wave-size)/-2) 50%, var(--_c)) calc(var(--wave-size)/2) var(--_m);
     }
 
-    .about-me-img {
-      display: flex;
-      justify-content: center;
-      padding: 0 30px;
-    }
 
     .about-me-buttons {
       display: flex;
@@ -134,8 +151,11 @@
       align-items: center;
     }
 
-    .about-me-img {
+    .about-me__image-wrapper {
       grid-column: 1 / 2;
+      display: flex;
+      justify-content: center;
+      padding: 0 30px;
     }
 
     .about-me-text {
@@ -201,8 +221,8 @@
     }
 
     @media all and (max-width: 746px) {
-      .round-image {
-        width: 150px;
+      .about-me__image {
+        --image-width: 150px;
       }
 
       .about-me {
@@ -213,7 +233,7 @@
         align-items: end;
       }
 
-      .about-me-img,
+      .about-me__image-wrapper,
       .about-me-text,
       .about-me-buttons {
         grid-column: 1 / 2;
@@ -250,8 +270,8 @@
   </nav>
   <main class="about">
     <section class="about-me">
-      <div class="about-me-img">
-        <img src="./assets/images/hand.JPG" alt="" class="round-image" />
+      <div class="about-me__image-wrapper">
+        <img src="./assets/images/hand.JPG" alt="" class="about-me__image" />
       </div>
       <div class="about-me-text">
         <h1 class="text-highlight about-heading">Hello, I'm India Evans.</h1>
