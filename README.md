@@ -31,4 +31,5 @@ vanilla html, css, & js
 
 ### fun extras
 - [ ] make skills draggable
+- [ ] add swipe gesture (hammerjs?) to about page
 - [ ] dark mode
