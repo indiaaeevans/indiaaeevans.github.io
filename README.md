@@ -18,6 +18,7 @@ vanilla html, css, & js
 - [x] check query params on load to deep link to "page"
 - [x] keyboard navigation for flipping pages
 - [x] add hint for keyboard controls
+- [x] fix sticky hover on mobile
 
 ### portfolio
 - [x] add more examples
