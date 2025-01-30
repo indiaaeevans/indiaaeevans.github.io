@@ -20,7 +20,7 @@ vanilla html, css, & js
 - [ ] add hint for keyboard controls
 
 ### portfolio
-- [ ] add more examples
+- [x] add more examples
 
 ### all
 - [ ] css cleanup
