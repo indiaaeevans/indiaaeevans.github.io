@@ -23,20 +23,21 @@
 </head>
 
 <body>
-    <!-- SVG definitions -->
-    <svg class="svg-defs" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <mask id="shape-mask">
-          <path fill="white" d="M33.3,61.2c9.1-9.1,18.2-18.2,22-15.6c6.5,2.6,0,13-3.9,19.5c-3.9,5.2-37.6,50.6-37.6,81.7c0,16.9,6.5,29.8,16.9,38.9c10.4,7.8,22,9.1,33.7,6.5c14.3-3.9,24.6-18.2,40.2-36.3c15.6-19.5,36.3-44.1,53.2-44.1c20.8,0,20.8,13,23.3,23.3c-49.2,7.8-70,48-70,70.1s18.2,40.2,41.5,40.2c20.8,0,55.8-16.9,61-79.1H246v-32.4h-32.4c-2.6-20.8-14.3-54.5-51.9-54.5c-28.5,0-54.5,24.6-63.5,36.3c-7.8,9.1-27.2,32.4-29.8,35c-3.9,3.9-9.1,10.4-14.3,10.4c-5.2,0-9.1-10.4-5.2-24.6c5.2-14.3,18.2-37.6,24.6-45.4c9.1-15.6,15.6-25.9,15.6-42.8c0-28.5-20.8-37.6-32.4-37.6c-16.9,0-31.1,13-35,16.9c-3.9,3.9-7.8,7.8-11.7,11.7L33.3,61.2L33.3,61.2z M153.9,212.9c-3.9,0-9.1-3.9-9.1-9.1c0-7.8,9.1-28.5,37.6-36.3C177.3,202.6,163,212.9,153.9,212.9L153.9,212.9z"/>
-        </mask>
-      </defs>
-    </svg>
+  <!-- SVG definitions -->
+  <svg class="svg-defs" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <mask id="shape-mask">
+        <path fill="white"
+          d="M33.3,61.2c9.1-9.1,18.2-18.2,22-15.6c6.5,2.6,0,13-3.9,19.5c-3.9,5.2-37.6,50.6-37.6,81.7c0,16.9,6.5,29.8,16.9,38.9c10.4,7.8,22,9.1,33.7,6.5c14.3-3.9,24.6-18.2,40.2-36.3c15.6-19.5,36.3-44.1,53.2-44.1c20.8,0,20.8,13,23.3,23.3c-49.2,7.8-70,48-70,70.1s18.2,40.2,41.5,40.2c20.8,0,55.8-16.9,61-79.1H246v-32.4h-32.4c-2.6-20.8-14.3-54.5-51.9-54.5c-28.5,0-54.5,24.6-63.5,36.3c-7.8,9.1-27.2,32.4-29.8,35c-3.9,3.9-9.1,10.4-14.3,10.4c-5.2,0-9.1-10.4-5.2-24.6c5.2-14.3,18.2-37.6,24.6-45.4c9.1-15.6,15.6-25.9,15.6-42.8c0-28.5-20.8-37.6-32.4-37.6c-16.9,0-31.1,13-35,16.9c-3.9,3.9-7.8,7.8-11.7,11.7L33.3,61.2L33.3,61.2z M153.9,212.9c-3.9,0-9.1-3.9-9.1-9.1c0-7.8,9.1-28.5,37.6-36.3C177.3,202.6,163,212.9,153.9,212.9L153.9,212.9z" />
+      </mask>
+    </defs>
+  </svg>
   <main class="landing-wrapper">
     <a class="site-entry-link" href="about.html" title="Go to About page">
-        <div class="site-entry-link__logo">
-          <img src="./assets/images/background-images/stardust.png" alt="Masked image" class="masked-image">
+      <div class="site-entry-link__logo">
+        <img src="./assets/images/background-images/stardust.png" alt="Masked image" class="masked-image">
       </div>
-      <span class="site-entry-link__text">indiaevans.dev</span>
+      <span class="site-entry-link__text">[ enter ]</span>
     </a>
   </main>
   <footer>
@@ -59,5 +60,13 @@
     </section>
   </footer>
 </body>
+<script>
+  document.addEventListener('keydown', function (event) {
+    // prevent hijacking other links on the page
+    if (event.key === 'Enter' && document.activeElement.tagName !== 'A') {
+      document.querySelector('.site-entry-link').click();
+    }
+  });
+</script>
 
 </html>

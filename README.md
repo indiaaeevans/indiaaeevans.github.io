@@ -17,7 +17,7 @@ vanilla html, css, & js
 - [x] use query params to track "page"
 - [x] check query params on load to deep link to "page"
 - [x] keyboard navigation for flipping pages
-- [ ] add hint for keyboard controls
+- [x] add hint for keyboard controls
 
 ### portfolio
 - [x] add more examples
