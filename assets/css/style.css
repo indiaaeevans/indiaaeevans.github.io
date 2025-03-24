@@ -66,6 +66,16 @@ nav {
   z-index: 10; /* Ensure nav stays above main content */
 }
 
+.screen-reader-only {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
 .menu-item {
   display: block;
   text-align: center;
