@@ -31,6 +31,7 @@ vanilla html, css, & js
 - [x] replace png illustrations with svg
 
 ### fun extras
-- [ ] make skills draggable
+- [ ] drag and drop
 - [ ] add swipe gesture (hammerjs?) to about page
-- [ ] dark mode
+- [x] dark mode support
+- [ ] light/dark mode toggle
