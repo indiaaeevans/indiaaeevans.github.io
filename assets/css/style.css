@@ -23,6 +23,7 @@
     --logo-color: var(--color-pink);
     --shadow-color__light: var(--color-purple);
     --shadow-color__dark: var(--color-neutral-dark);
+    --section-link-background-color: var(--color-neutral-dark);
 }
 
 @media (prefers-color-scheme: light) {
@@ -33,11 +34,13 @@
         --shadow-color__light: var(--color-neutral-dark);
         --shadow-color__dark: var(--color-neutral-extra-dark);
         --card-background-color: var(--color-neutral-light);
+        --section-link-background-color: var(--color-neutral-light);
     }
 }
 
 * {
-    font-family: 'Sen', monospace;
+    /* TODO backup fonts */
+    font-family: 'Sen', Arial, sans-serif;
     box-sizing: border-box;
 }
 
@@ -148,46 +151,18 @@ nav {
     filter: drop-shadow(1px 1px 0 var(--shadow-color__light));
 }
 
-@media all and (max-width: 746px) {
-    .site-entry-link {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-
-    /* TODO animate logo in mobile in lieu of hover animation */
-    /* .site-entry-link:active .site-entry-link__logo {
-        animation: none;
-    } 
-    .site-entry-link .site-entry-link__logo {
-        animation: logoTransform 1s infinite ease-in-out;
-    }
-
-    @keyframes logoTransform {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: rotate(-4deg) scale(1.15);
-
-        }
-
-        100% {
-            transform: rotate(0) scale(1);
-        }
-    } */
-}
-
 /* end landing page */
-
+/* TODO improve light mode styles */
 .section-link {
     position: absolute;
     bottom: 36px;
     display: block;
     text-align: center;
-    font-size: 1.125rem;
     transition: opacity 2s;
+    font-size: .75rem;
+    border-radius: 3px;
+    background: var( --section-link-background-color);
+    padding: 10px;
 }
 
 
@@ -272,9 +247,9 @@ main {
     /* min-height: calc(100vh - 80px); */
 }
 
-section.fullscreen {
+.fullscreen {
     min-height: 100dvh;
-    padding: 36px;
+    padding: 0 36px 36px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -321,6 +296,18 @@ section.fullscreen {
     footer {
         flex-direction: column;
         gap: 0;
+    }
+    .site-entry-link {
+        gap: 12px;
+    }
+    main, .menu-item {
+        font-size: 1rem;
+    }
+    .fullscreen {
+        padding: 0 16px 16px;
+    }
+    .section-link {
+        bottom: 16px;
     }
 }
 
