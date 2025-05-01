@@ -1,3 +1,18 @@
+const navLinks = document.querySelectorAll('nav > .menu-item');
+const main = document.querySelector('main');
+displayNavLinks();
+
+function changeOpacity(element, amount) {
+  element.style.opacity = amount;
+}
+
+function displayNavLinks() {
+  navLinks.forEach((element, index) => {
+    setTimeout(() => {
+      changeOpacity(element, 1);
+    }, 250 * index);
+  });
+}
 // Handle viewport height changes
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
