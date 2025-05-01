@@ -31,8 +31,8 @@
         --body-background-color: #a2cedf;
         --body-text-color: var(--color-neutral-dark);
         --logo-color: var(--color-highlight);
-        --shadow-color__light: var(--color-neutral-dark);
-        --shadow-color__dark: var(--color-neutral-extra-dark);
+        --shadow-color__light: #a2cedf;
+        --shadow-color__dark: var(--color-neutral-dark);
         --card-background-color: var(--color-neutral-light);
         --section-link-background-color: var(--color-neutral-light);
     }
@@ -159,7 +159,7 @@ nav {
     display: block;
     text-align: center;
     transition: opacity 2s;
-    font-size: .75rem;
+    font-size: 1rem;
     border-radius: 3px;
     padding: 8px 16px;
 }
@@ -355,7 +355,7 @@ main {
     padding: 0.75em 2em;
     min-width: 100px;
     text-decoration: none;
-    font-size: .75rem;
+    font-size: 1rem;
     text-align: center;
     border: 1px solid var(--color-neutral-dark);
     position: relative;
@@ -365,8 +365,7 @@ main {
 .btn-text {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* left: 50%; */
     white-space: nowrap;
     transition: transform 0.3s ease-in-out;
     width: 100%;
@@ -374,11 +373,11 @@ main {
 }
 
 #next-button .btn-text {
-    transform: translate(-150%, -50%);
+    transform: translate(-150%, 0);
 }
 
 #back-button .btn-text {
-    transform: translate(50%, -50%);
+    transform: translate(150%, 0);
 }
 
 .btn-arrow {
@@ -388,12 +387,12 @@ main {
 }
 
 @media (hover: hover) {
-    #next-button:hover .btn-arrow {
-        transform: translate(150%, 50%);
+    #next-button:enabled:hover .btn-arrow {
+        transform: translate(150%, 0);
     }
 
-    #back-button:hover .btn-arrow {
-        transform: translate(-150%, 50%);
+    #back-button:enabled:hover .btn-arrow {
+        transform: translate(-150%, 0);
     }
 
     #next-button:enabled:hover .btn-text {
@@ -584,6 +583,9 @@ main {
 
     .skill {
         padding: 0.25em .5em;
+    }
+    .btn, .section-link {
+        font-size: .75rem;
     }
 }
 
