@@ -28,6 +28,7 @@ vanilla html, css, & js
 - [ ] js cleanup
 - [ ] self host fonts
 - [ ] add reduced motion toggle
+- [ ] optimize images
 - [x] replace png illustrations with svg
 
 ### fun extras

@@ -11,7 +11,7 @@
     --color-pink: #FFC6FF;
 
     --text-color__light: var(--color-neutral-light);
-    --text-color__dark: var(--color-neutral-dark);
+    --text-color__dark: var(--color-neutral-extra-dark);
 
     --body-text-color: var(--text-color__light);
     --body-background-color: #031a25;
@@ -635,11 +635,6 @@ figcaption {
 
 .portfolio-link span {
     margin-right: 2px;
-}
-
-.portfolio {
-    opacity: 0;
-    transition: opacity 2s;
 }
 
 .portfolio-heading {
