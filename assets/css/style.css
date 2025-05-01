@@ -152,24 +152,19 @@ nav {
 }
 
 /* end landing page */
-/* TODO improve light mode styles */
+
 .section-link {
-    /* position: absolute; */
-    bottom: 24px;
     display: block;
-    text-align: center;
-    transition: opacity 2s;
     font-size: 1rem;
-    border-radius: 3px;
     padding: 8px 16px;
 }
-
 
 .menu-item {
     display: block;
     text-align: center;
     font-size: 1.125rem;
     transition: opacity 2s;
+    opacity: 0;
 }
 
 .menu-item:not(:last-child) {
@@ -209,6 +204,11 @@ footer a {
 
 footer .external-links a:hover {
     color: var(--color-orange);
+}
+.silly {
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-size: 1.25rem;
 }
 
 .text-muted {
@@ -313,9 +313,6 @@ main {
     .fullscreen {
         padding: 80px 16px 16px;
     }
-    .section-link {
-        bottom: 16px;
-    }
 }
 
 /* ABOUT PAGE */
@@ -331,17 +328,6 @@ main {
         --wavy-border-color: var(--color-neutral-dark);
 
     }
-}
-
-.menu-item {
-    opacity: 0;
-}
-
-.about {
-    opacity: 0;
-    transition: opacity 2s;
-    display: flex;
-    justify-content: center;
 }
 
 .animating {
@@ -388,11 +374,11 @@ main {
 
 @media (hover: hover) {
     #next-button:enabled:hover .btn-arrow {
-        transform: translate(150%, 0);
+        transform: translate(170%, 0);
     }
 
     #back-button:enabled:hover .btn-arrow {
-        transform: translate(-150%, 0);
+        transform: translate(-170%, 0);
     }
 
     #next-button:enabled:hover .btn-text {
@@ -428,8 +414,6 @@ main {
 .btn:disabled,
 .btn:disabled:hover {
     opacity: 0;
-    /* color: var(--text-color__dark); */
-    /* box-shadow: none; */
 }
 
 .section-heading {
@@ -659,7 +643,6 @@ figcaption {
 }
 
 .portfolio-heading {
-    text-align: center;
     font-style: italic;
     margin: 0;
 }
