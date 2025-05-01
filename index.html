@@ -294,6 +294,63 @@
     const backButton = document.getElementById('back-button');
     const nextButton = document.getElementById('next-button');
 
+    // Add menu highlighting functionality
+    const menuItems = document.querySelectorAll('.menu-item');
+    const sections = document.querySelectorAll('section[id]');
+    const homeMenuItem = document.querySelector('.menu-item[href="#"]');
+
+    // Debounce function to prevent multiple highlights
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Function to update menu highlight
+    const updateMenuHighlight = (sectionId) => {
+        menuItems.forEach(item => item.classList.remove('text-highlight'));
+        const correspondingMenuItem = document.querySelector(`.menu-item[href="#${sectionId}"]`);
+        if (correspondingMenuItem) {
+            correspondingMenuItem.classList.add('text-highlight');
+        } else {
+            homeMenuItem.classList.add('text-highlight');
+        }
+    };
+
+    // Debounced version of updateMenuHighlight
+    const debouncedUpdateMenuHighlight = debounce(updateMenuHighlight, 500);
+
+    // Create an Intersection Observer to watch sections
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.getAttribute('id');
+                debouncedUpdateMenuHighlight(sectionId);
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when section is 50% visible
+    });
+
+    // Observe all sections
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Update menu highlight on click (no debounce needed for clicks)
+    menuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            menuItems.forEach(menuItem => menuItem.classList.remove('text-highlight'));
+            e.target.classList.add('text-highlight');
+        });
+    });
+
     // event listeners
     document.addEventListener('DOMContentLoaded', () => {
         requestedPage = getPageFromUrl();
