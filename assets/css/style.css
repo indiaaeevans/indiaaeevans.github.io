@@ -50,7 +50,6 @@ html {
 }
 
 body {
-    height: 100dvh;
     margin: 0;
     background-color: var(--body-background-color);
     /* background-image: url('../images/background-images/concrete.png'); */
