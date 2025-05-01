@@ -24,6 +24,9 @@
     --shadow-color__light: var(--color-purple);
     --shadow-color__dark: var(--color-neutral-dark);
     --section-link-background-color: var(--color-neutral-dark);
+    
+    /* Viewport height will be set by JavaScript */
+    --vh: 1vh;
 }
 
 @media (prefers-color-scheme: light) {
@@ -244,9 +247,9 @@ main {
     /* min-height: 100dvh; */
     /* min-height: calc(100vh - 80px); */
 }
-
+/* TODO how to handle mobile nav showing/hiding causing layout shift */
 .fullscreen {
-    min-height: 100dvh;
+    min-height: calc(var(--vh, 1vh) * 100);
     padding: 80px 36px 36px;
     display: flex;
     align-items: center;
