@@ -578,6 +578,7 @@ footer {
 
     .about-image {
         --image-width: 150px;
+        margin: 0 auto;
     }
 
     .about-container {
