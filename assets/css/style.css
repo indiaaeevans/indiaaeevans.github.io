@@ -620,6 +620,10 @@ footer {
     .section-link {
         font-size: .75rem;
     }
+
+    .internal-links {
+        text-align: center;
+    }
 }
 
 @media (hover: hover) {
