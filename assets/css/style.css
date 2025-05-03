@@ -32,12 +32,12 @@
     --logo-color: var(--color-pink);
     --shadow-color__light: var(--color-purple);
     --shadow-color__dark: var(--color-neutral-dark);
-    
+
     /* About Page Variables */
     --wave-size: 15px;
     --image-width: 200px;
     --wavy-border-color: var(--color-pink);
-    
+
     /* Viewport height will be set by JavaScript */
     --vh: 1vh;
 }
@@ -60,7 +60,7 @@
    Base Styles
    ========================================================================== */
 * {
-    font-family: 'Sen', Arial, sans-serif;
+    font-family: Sen, Arial, sans-serif;
     box-sizing: border-box;
 }
 
@@ -105,9 +105,8 @@ main {
     padding: 80px 36px 36px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 16px;
 }
 
@@ -115,7 +114,7 @@ main {
     padding-bottom: 80px;
 }
 
-.fullscreen:not(:last-child) >*:first-child {
+.fullscreen:not(:last-child)>*:first-child {
     flex-grow: 1;
 }
 
@@ -143,13 +142,24 @@ main {
     text-align: center;
     font-size: 1.125rem;
     opacity: 0;
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fade-in 0.5s ease-out forwards;
 }
 
-.nav-link:nth-child(2) { animation-delay: 0.25s; }
-.nav-link:nth-child(3) { animation-delay: 0.5s; }
-.nav-link:nth-child(4) { animation-delay: 0.75s; }
-.nav-link:nth-child(5) { animation-delay: 1s; }
+.nav-link:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.nav-link:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.nav-link:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.nav-link:nth-child(5) {
+    animation-delay: 1s;
+}
 
 .nav-link:not(:last-child) {
     margin-right: 14px;
@@ -162,7 +172,7 @@ main {
     width: 64px;
     height: 64px;
     color: var(--logo-color);
-    fill: currentColor;
+    fill: currentcolor;
     transition: transform 200ms ease-out;
     transform: rotate(-2deg);
     filter: drop-shadow(1px 1px 0 var(--shadow-color__dark)) drop-shadow(2px 2px 0 var(--shadow-color__light));
@@ -178,10 +188,8 @@ main {
    ========================================================================== */
 .landing-wrapper {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
+    flex-flow: row wrap;
+    place-content: center center;
     align-items: center;
 }
 
@@ -210,7 +218,7 @@ main {
 /* ==========================================================================
    About Page
    ========================================================================== */
-.about-container, 
+.about-container,
 .skills-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -219,7 +227,8 @@ main {
     align-items: center;
 }
 
-.about-text, .skills-text {
+.about-text,
+.skills-text {
     max-width: 430px;
 }
 
@@ -233,18 +242,22 @@ main {
 .about-image {
     transition: transform 200ms ease-out;
     transform: rotate(4deg);
-    width: round(var(--image-width), 2*var(--wave-size));
+    width: round(var(--image-width), var(--wave-size)*2);
     aspect-ratio: 1;
     padding: var(--wave-size);
     border-radius: calc(1.5*var(--wave-size));
+
     --R: calc(var(--wave-size)/sqrt(2)) at;
     --g: radial-gradient(var(--R) 50%, var(--wavy-border-color) calc(100% - 1px), #0000) 0 0/calc(2*var(--wave-size)) calc(2*var(--wave-size));
     --_c: #0000 100%, var(--wavy-border-color) calc(100% + 1px);
     --_b: calc(2*var(--wave-size)) calc(51% - var(--wave-size)/2) repeat-x;
+
     background: var(--g),
         radial-gradient(var(--R) 50% calc(100% + var(--wave-size)/2), var(--_c)) var(--wave-size) calc(100% - var(--wave-size)/2)/var(--_b),
         radial-gradient(var(--R) 50% calc(var(--wave-size)/-2), var(--_c)) var(--wave-size) calc(var(--wave-size)/2)/var(--_b);
+
     --_m: var(--wave-size)/calc(51% - var(--wave-size)/2) calc(2*var(--wave-size)) repeat-y;
+
     mask: var(--g),
         radial-gradient(var(--R) calc(100% + var(--wave-size)/2) 50%, var(--_c)) calc(100% - var(--wave-size)/2) var(--_m),
         radial-gradient(var(--R) calc(var(--wave-size)/-2) 50%, var(--_c)) calc(var(--wave-size)/2) var(--_m);
@@ -267,13 +280,12 @@ main {
 .skill {
     color: var(--text-color__dark);
     font-size: .75em;
-    margin-bottom: 0.5em;
     background-color: var(--skill-background-color);
     display: inline-block;
     padding: 0.5em 2em;
     border: 1px solid var(--color-neutral-dark);
     text-align: center;
-    box-shadow: rgba(255, 255, 255, .5) 0 3px 0 0 inset;
+    box-shadow: rgb(255 255 255 / 50%) 0 3px 0 0 inset;
     flex-grow: 1;
     margin: 2px;
     opacity: 0;
@@ -287,11 +299,25 @@ main {
     transform: translateY(0);
 }
 
-.dev-skill { background-color: var(--color-pink); }
-.testing-skill { background-color: var(--color-orange); }
-.build-tools-skill { background-color: var(--color-yellow); }
-.devops-skill { background-color: var(--color-blue); }
-.ux-skill { background-color: var(--color-purple); }
+.dev-skill {
+    background-color: var(--color-pink);
+}
+
+.testing-skill {
+    background-color: var(--color-orange);
+}
+
+.build-tools-skill {
+    background-color: var(--color-yellow);
+}
+
+.devops-skill {
+    background-color: var(--color-blue);
+}
+
+.ux-skill {
+    background-color: var(--color-purple);
+}
 
 /* ==========================================================================
    Projects
@@ -309,14 +335,14 @@ main {
 .project-list>li {
     background-color: var(--card-background-color);
     padding: 20px;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 7%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.project-list>li > p {
+.project-list>li>p {
     flex-grow: 1;
 }
 
@@ -365,22 +391,19 @@ main {
 footer {
     height: 200px;
     background-color: var(--footer-background-color);
+    color: var(--text-color__light);
     padding: 40px 16px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
     gap: 16px;
     border-top: solid 3px var(--border-color);
 }
 
-footer a {
+.internal-links a,
+.external-links a {
     color: var(--text-color__light);
-}
-
-footer .external-links a:hover {
-    color: var(--color-orange);
 }
 
 .external-links {
@@ -392,8 +415,11 @@ footer .external-links a:hover {
 }
 
 .internal-links {
-    color: var(--text-color__light);
     font-size: 1.125rem;
+}
+
+.external-links a:hover {
+    color: var(--color-orange);
 }
 
 /* ==========================================================================
@@ -428,14 +454,20 @@ footer .external-links a:hover {
     font-family: serif;
 }
 
-#next-button .btn-text { transform: translate(-150%, 0); }
-#back-button .btn-text { transform: translate(150%, 0); }
+#next-button .btn-text {
+    transform: translate(-150%, 0);
+}
 
-#next-button { border-radius: 0 3px 3px 0; }
-#back-button { border-radius: 3px 0 0 3px; }
+#back-button .btn-text {
+    transform: translate(150%, 0);
+}
 
-.btn:enabled:active {
-    background-color: var(--color-highlight);
+#next-button {
+    border-radius: 0 3px 3px 0;
+}
+
+#back-button {
+    border-radius: 3px 0 0 3px;
 }
 
 .btn:focus-visible {
@@ -445,6 +477,10 @@ footer .external-links a:hover {
 .btn:disabled,
 .btn:disabled:hover {
     opacity: 0;
+}
+
+.btn:enabled:active {
+    background-color: var(--color-highlight);
 }
 
 .section-link {
@@ -500,11 +536,12 @@ footer .external-links a:hover {
 /* ==========================================================================
    Animations
    ========================================================================== */
-@keyframes fadeIn {
+@keyframes fade-in {
     from {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -518,7 +555,7 @@ footer .external-links a:hover {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-@media all and (max-width: 746px) {
+@media all and (width <=746px) {
     .nav-logo,
     .nav-logo img {
         width: 48px;
@@ -530,7 +567,8 @@ footer .external-links a:hover {
         gap: 0;
     }
 
-    main, .nav-link {
+    main,
+    .nav-link {
         font-size: 1rem;
     }
 
@@ -577,7 +615,8 @@ footer .external-links a:hover {
         padding: 0.25em .5em;
     }
 
-    .btn, .section-link {
+    .btn,
+    .section-link {
         font-size: .75rem;
     }
 }
