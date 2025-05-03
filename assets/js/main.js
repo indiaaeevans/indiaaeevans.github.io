@@ -22,7 +22,7 @@ class ViewportManager {
         const newVh = window.innerHeight * 0.01;
         const widthChanged = window.innerWidth !== document.documentElement.clientWidth;
         const heightChangedSignificantly = Math.abs(newVh - this.vh) > 1;
-        
+
         if (widthChanged || heightChangedSignificantly) {
             this.vh = newVh;
             this.updateVh();
@@ -52,13 +52,6 @@ const devSection = `<p class="tagline">Also known as: frontend engineer, tenacio
     careerSection = `<p>I took the "non-traditional" path to the industry. In 2017, while (miserably) working in financial services, I took a risk and dumped my savings into a 6-month coding bootcamp to learn what I needed to start building a career in tech. My ability to solve problems and my curiosity to learn allowed me to transition into a software engineering role by the end of the program.<p><b>I haven't stopped learning since.<b><p>`,
     personalSection = `<p>I'm based in Durham, NC just outside of Research Triangle Park. Outside of work, I immerse myself in sewing, crafting, exploring nature, and making a mess in the kitchen.<p>
 <p>Let's make something <em class="text-highlight">awesome</em> together.<p>`;
-
-pages = [devSection, careerSection, personalSection];
-let requestedPage,
-    currentPage = 0;
-const aboutMe = document.getElementById('bio');
-const backButton = document.getElementById('back-button');
-const nextButton = document.getElementById('next-button');
 
 // Add menu highlighting functionality
 const menuItems = document.querySelectorAll('.nav > .nav-link');
@@ -169,7 +162,7 @@ class PageNavigator {
 
     updatePage(pageIndex, animate = true) {
         if (this.isAnimating) return;
-        
+
         this.isAnimating = true;
         this.currentPage = pageIndex;
 
@@ -226,17 +219,9 @@ class PageNavigator {
     }
 }
 
-// Initialize page navigator
-const pageNavigator = new PageNavigator(
-    [devSection, careerSection, personalSection],
-    document.getElementById('bio'),
-    document.getElementById('back-button'),
-    document.getElementById('next-button')
-);
-
 // animate skills when the skills section enters the viewport
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             const items = document.querySelectorAll('.skill');
             let delay = 100;
@@ -250,6 +235,14 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
+
+// Initialize page navigator
+const pageNavigator = new PageNavigator(
+    [devSection, careerSection, personalSection],
+    document.getElementById('bio'),
+    document.getElementById('back-button'),
+    document.getElementById('next-button')
+);
 
 const skillsSectionEl = document.querySelector('.skills');
 observer.observe(skillsSectionEl);

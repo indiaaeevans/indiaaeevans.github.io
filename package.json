@@ -1,0 +1,25 @@
+{
+  "name": "indiaaeevans.github.io",
+  "version": "1.0.0",
+  "description": "I first designed and built this project site back when I was still a junior engineer to have something to show a hiring manager for a ux dev job I was applying for. I only recently redescovered it and decided to give it a COMPLETE makeover!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./assets/js/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indiaaeevans/indiaaeevans.github.io.git"
+  },
+  "author": "India Evans",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indiaaeevans/indiaaeevans.github.io/issues"
+  },
+  "homepage": "https://github.com/indiaaeevans/indiaaeevans.github.io#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "eslint": "^9.26.0",
+    "globals": "^16.0.0"
+  }
+}
