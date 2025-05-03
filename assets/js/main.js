@@ -1,6 +1,3 @@
-const navLinks = document.querySelectorAll('nav > .menu-item');
-const main = document.querySelector('main');
-
 // Viewport height handling
 class ViewportManager {
     constructor() {
@@ -64,9 +61,9 @@ const backButton = document.getElementById('back-button');
 const nextButton = document.getElementById('next-button');
 
 // Add menu highlighting functionality
-const menuItems = document.querySelectorAll('.menu-item');
+const menuItems = document.querySelectorAll('.nav > .nav-link');
 const sections = document.querySelectorAll('section[id]');
-const homeMenuItem = document.querySelector('.menu-item[href="#"]');
+const homeMenuItem = document.querySelector('.nav-link[href="#"]');
 
 // Debounce function to prevent multiple highlights
 function debounce(func, wait) {
@@ -84,7 +81,7 @@ function debounce(func, wait) {
 // Function to update menu highlight
 const updateMenuHighlight = (sectionId) => {
     menuItems.forEach(item => item.classList.remove('text-highlight'));
-    const correspondingMenuItem = document.querySelector(`.menu-item[href="#${sectionId}"]`);
+    const correspondingMenuItem = document.querySelector(`.nav-link[href="#${sectionId}"]`);
     if (correspondingMenuItem) {
         correspondingMenuItem.classList.add('text-highlight');
     } else {
